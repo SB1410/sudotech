@@ -320,11 +320,11 @@ img {
 
 .expertise-content .service-card h3 {
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: #1a1a1a;
 }
 
 .expertise-content .service-card p {
-    color: var(--text-gray);
+    color: #333333;
     margin-bottom: 1rem;
 }
 
@@ -1624,6 +1624,19 @@ nav {
 
 .filter-btn i {
     font-size: 0.85rem;
+}
+
+[data-theme="dark"] .filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    /* Darker background */
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    background: rgba(249, 115, 22, 0.2);
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 /* Bento Grid Layout */

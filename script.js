@@ -434,6 +434,15 @@ document.addEventListener('DOMContentLoaded', () => {
             marqueeTrack.style.transform = `translateX(${currentTransform}px)`;
         };
 
+        const handleTouchEnd = () => {
+            if (!isDown) return;
+            isDown = false;
+            marqueeWrapper.classList.remove('dragging');
+
+            // For touch, we resume immediately since there's no "hover" state
+            resumeAnimation();
+        };
+
         // Mouse events - listen on cards only for mousedown
         marqueeWrapper.addEventListener('mousedown', handleMouseDown);
         window.addEventListener('mousemove', handleMouseMove);
@@ -442,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Touch events
         marqueeWrapper.addEventListener('touchstart', handleMouseDown, { passive: false });
         window.addEventListener('touchmove', handleMouseMove, { passive: false });
-        window.addEventListener('touchend', handleMouseUp);
+        window.addEventListener('touchend', handleTouchEnd);
 
         // Pause ONLY when hovering directly over a card
         marqueeWrapper.addEventListener('mouseover', (e) => {
