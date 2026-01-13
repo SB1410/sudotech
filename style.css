@@ -164,7 +164,7 @@ h5,
 h6 {
     line-height: 1.2;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-light);
 }
 
 h1 {
@@ -1616,10 +1616,14 @@ nav {
 }
 
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-color: transparent;
-    color: white;
-    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+}
+
+.filter-btn.active i {
+    color: #000000 !important;
 }
 
 .filter-btn i {
@@ -1782,7 +1786,7 @@ nav {
 
 .portfolio-card-content h3 {
     font-size: 1.25rem;
-    color: var(--text-light);
+    color: #1a1a1a;
     margin: 0;
     line-height: 1.3;
 }
@@ -1793,7 +1797,7 @@ nav {
 
 .portfolio-card-content p {
     font-size: 0.9rem;
-    color: var(--text-gray);
+    color: #333333;
     margin: 0;
     line-height: 1.5;
 }
@@ -1803,7 +1807,7 @@ nav {
     display: flex;
     gap: 1.25rem;
     font-size: 0.85rem;
-    color: var(--text-gray);
+    color: #4a4a4a;
 }
 
 .portfolio-stats span {
@@ -2583,6 +2587,16 @@ footer .logo-sudo {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.marquee-card h3 {
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.marquee-card p {
+    color: #333333;
+    margin-bottom: 1rem;
 }
 
 .marquee-card:hover {
