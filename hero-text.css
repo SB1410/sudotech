@@ -62,8 +62,8 @@
     /* Increased weight for visibility */
     font-family: 'Courier New', monospace;
     /* Tech feel */
-    color: var(--text-gray);
-    -webkit-text-fill-color: var(--text-gray);
+    color: #333333;
+    -webkit-text-fill-color: #333333;
     /* Override parent h1 transparency */
     letter-spacing: 1px;
     opacity: 1;
@@ -74,6 +74,11 @@
     top: -5px;
     white-space: nowrap;
     /* Ensure sub-text never wraps */
+}
+
+[data-theme="dark"] .hero-title .sub-text {
+    color: #e0e0e0;
+    -webkit-text-fill-color: #e0e0e0;
 }
 
 /* Responsive adjustments */
