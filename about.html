@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About SUDOtech Studio - Learn about our team, vision, and mission in delivering premium digital services.">
+    <meta name="keywords" content="About, Creative Agency, Digital Services, Team, Vision, Mission">
+    <meta name="author" content="SUDOtech Studio">
+    <title>About Us | SUDOtech Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* About Page Background with Animated Shapes */
+        .about-page-bg {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            top: 50%;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #ec4899, #be185d);
+            top: 30%;
+            left: 60%;
+            animation-delay: -15s;
+        }
+
+        .shape-5 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            bottom: -50px;
+            right: 20%;
+            animation-delay: -7s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: translate(30px, -30px) rotate(5deg) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) rotate(-5deg) scale(0.95);
+            }
+
+            75% {
+                transform: translate(10px, -10px) rotate(3deg) scale(1.02);
+            }
+        }
+
+        /* Content positioning */
+        .about-page-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 100px;
+            padding-bottom: 60px;
+        }
+
+        /* Override text colors for dark background */
+        .about-page-bg h2,
+        .about-page-bg h4,
+        .about-page-bg small {
+            color: #ffffff;
+        }
+
+        .about-page-bg p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Hero content card styling */
+        .about-page-bg .hero-content {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Image styling */
+        .about-page-bg .about-image img {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Navbar adjustments */
+        .about-page-bg header {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Hero grid adjustments */
+        .about-page-bg .hero-grid {
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .about-page-bg .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-page-bg .about-image {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="about-page-bg">
+        <!-- Animated Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+
+        <!-- Navigation -->
+        <header>
+            <div class="container">
+                <nav>
+                    <a href="index.html" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#portfolio">Work</a>
+                        <a href="#" class="active">About</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="about-page-content section-padding">
+            <div class="container">
+                <div class="hero-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="about-image fade-in">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Team Working"
+                            style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); width: 100%;">
+                    </div>
+
+                    <div class="hero-content fade-in">
+                        <small
+                            style="color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">About
+                            Us</small>
+                        <h2 style="margin-top: 0.5rem; color: #fff;">Driven by Creativity,<br>Backed by Data.</h2>
+                        <p>We are a multidisciplinary team of designers, editors, and analysts passionate about solving
+                            complex digital challenges.</p>
+                        <p>Our workflow integrates aesthetic perfection with analytical rigor, ensuring everything we
+                            create not only looks good but performs exceptionally.</p>
+                        <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Vision</h4>
+                                <p style="font-size: 0.9rem;">To redefine digital storytelling.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Mission</h4>
+                                <p style="font-size: 0.9rem;">Empower brands with premium assets.</p>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem;">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a0a;">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">Transforming ideas
+                        into digital reality through exceptional design and data strategies.</p>
+                    <ul class="social-links-new">
+                        <li class="icon-content">
+                            <a href="#" aria-label="X" data-social="x" class="social-link-new">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <div class="tooltip">X</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Instagram" data-social="instagram" class="social-link-new">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <div class="tooltip">Instagram</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="LinkedIn" data-social="linkedin" class="social-link-new">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="tooltip">LinkedIn</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Dribbble" data-social="dribbble" class="social-link-new">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <div class="tooltip">Dribbble</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #fff;">Services</h4>
+                    <ul style="margin-top: 1rem; color: rgba(255,255,255,0.6); line-height: 2;">
+                        <li><a href="graphic-design.html" style="color: rgba(255,255,255,0.6);">Graphic Design</a></li>
+                        <li><a href="video-editing.html" style="color: rgba(255,255,255,0.6);">Video Editing</a></li>
+                        <li><a href="data-management.html" style="color: rgba(255,255,255,0.6);">Data Management</a>
+                        </li>
+                        <li><a href="web-development.html" style="color: rgba(255,255,255,0.6);">Full-Website
+                                Building</a></li>
+                        <li><a href="product-photography.html" style="color: rgba(255,255,255,0.6);">Product Photography
+                                & Marketing</a></li>
+                        <li><a href="social-management.html" style="color: rgba(255,255,255,0.6);">Social Media
+                                Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #fff;">Company</h4>
+                    <ul style="margin-top: 1rem; color: rgba(255,255,255,0.6); line-height: 2;">
+                        <li><a href="#" style="color: rgba(255,255,255,0.6);">About Us</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.6);">Careers</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.6);">Blog</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" style="border-top-color: rgba(255,255,255,0.1);">
+                <p style="color: rgba(255,255,255,0.5);">&copy; 2024 SUDOtech Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

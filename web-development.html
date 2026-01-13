@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SUDOtech Studio - High-Performance Web Development. From landing pages to full e-commerce solutions.">
+    <meta name="keywords" content="Web Development, Responsive Design, E-commerce, Landing Pages, JavaScript, SUDOtech">
+    <meta name="author" content="SUDOtech Studio">
+    <title>Web Development | SUDOtech Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .pricing-card h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 1.5rem 0;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features i {
+            color: var(--primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <span class="logo-prompt">&gt;</span>
+                    <span class="logo-sudo">SUDO</span>
+                    <span class="logo-tech">tech</span>
+                    <span class="logo-cursor"></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#portfolio">Work</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="index.html#contact" class="btn btn-primary"
+                        style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fixed Plasma Wave Background - Covers entire website -->
+    <canvas id="plasma-wave-canvas" class="fixed-website-bg"></canvas>
+
+    <section class="section-padding" style="padding-top: 10rem;">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+            <div class="fade-in visible">
+                <h1 class="text-gradient">Web Development</h1>
+                <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem; color: #000000;">
+                    From wireframes to deployment, we build responsive, high-performance websites. We bridge the gap
+                    between complex code and intuitive user experience.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Landing Page -->
+                <div class="pricing-card fade-in visible">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Landing Page</h3>
+                    <div class="price-tag">$500 <span>/ project</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Single Page Design</li>
+                        <li><i class="fas fa-check"></i> Conversion Optimized</li>
+                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check"></i> Contact Form Integration</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Multi-Page -->
+                <div class="pricing-card featured fade-in visible">
+                    <div class="service-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>Multi-Page Site</h3>
+                    <div class="price-tag">$1,500 <span>/ project</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 5 Pages</li>
+                        <li><i class="fas fa-check"></i> Custom UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> Performance Tuning</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary" style="width: 100%;">Select Plan</a>
+                </div>
+
+                <!-- E-commerce -->
+                <div class="pricing-card fade-in visible">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>E-commerce</h3>
+                    <div class="price-tag">$3,000 <span>/ project</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Full Store Setup</li>
+                        <li><i class="fas fa-check"></i> Inventory Management</li>
+                        <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+                        <li><i class="fas fa-check"></i> Customer Dashboard</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top: 5rem;">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
+                        exceptional
+                        design and data strategies.</p>
+                    <ul class="social-links-new">
+                        <li class="icon-content">
+                            <a href="#" aria-label="X" data-social="x" class="social-link-new">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <div class="tooltip">X</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Instagram" data-social="instagram" class="social-link-new">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <div class="tooltip">Instagram</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="LinkedIn" data-social="linkedin" class="social-link-new">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="tooltip">LinkedIn</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Dribbble" data-social="dribbble" class="social-link-new">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <div class="tooltip">Dribbble</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="graphic-design.html">Graphic Design</a></li>
+                        <li><a href="video-editing.html">Video Editing</a></li>
+                        <li><a href="data-management.html">Data Management</a></li>
+                        <li><a href="web-development.html">Full-Website Building</a></li>
+                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
+                        <li><a href="social-management.html">Social Media Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 SUDOtech Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="plasma-wave.js"></script>
+</body>
+
+</html>

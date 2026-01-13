@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SUDOtech Studio - Premium Graphic Design Services. Logo, UI/UX, and Social Media Graphics.">
+    <meta name="keywords" content="Graphic Design, Branding, UI/UX, Creative Agency">
+    <meta name="author" content="SUDOtech Studio">
+    <title>Graphic Design Services | SUDOtech Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Creative Design Background */
+        .design-page-bg {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0c0c1d 0%, #1a0a2e 30%, #2d1b4e 60%, #1a1a2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Gradient Mesh Background */
+        .gradient-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Morphing Color Blobs */
+        .color-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: morph 20s infinite ease-in-out;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            top: -10%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            top: 30%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #ffbe0b, #fb5607);
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .blob-4 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            top: 50%;
+            left: 50%;
+            animation-delay: -15s;
+        }
+
+        @keyframes morph {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+
+            25% {
+                transform: translate(50px, -30px) scale(1.1) rotate(90deg);
+                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            }
+
+            50% {
+                transform: translate(-20px, 50px) scale(0.9) rotate(180deg);
+                border-radius: 50% 50% 40% 60% / 40% 50% 50% 60%;
+            }
+
+            75% {
+                transform: translate(30px, 20px) scale(1.05) rotate(270deg);
+                border-radius: 40% 60% 60% 40% / 70% 30% 50% 50%;
+            }
+        }
+
+        /* Rotating Geometric Shapes */
+        .geo-shape {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: rotate 30s linear infinite;
+        }
+
+        .geo-1 {
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            right: 15%;
+            transform: rotate(45deg);
+        }
+
+        .geo-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 30%;
+            left: 10%;
+            border-radius: 50%;
+            animation-direction: reverse;
+        }
+
+        .geo-3 {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            right: 25%;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: rgba(255, 255, 255, 0.03);
+            border: none;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Color Palette Dots */
+        .palette-dots {
+            position: absolute;
+            display: flex;
+            gap: 8px;
+            opacity: 0.3;
+            animation: float-palette 10s infinite ease-in-out;
+        }
+
+        .palette-dots .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .palette-1 {
+            top: 15%;
+            left: 60%;
+        }
+
+        .palette-2 {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float-palette {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Content styling */
+        .design-page-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .design-page-bg h1,
+        .design-page-bg h3,
+        .design-page-bg h4 {
+            color: #ffffff;
+        }
+
+        .design-page-bg p,
+        .design-page-bg .back-link {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .design-page-bg header {
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .design-page-bg footer {
+            background: #0a0a0a;
+        }
+
+        .design-page-bg footer h4,
+        .design-page-bg footer p,
+        .design-page-bg footer a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 1.5rem 0;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features i {
+            color: var(--primary);
+        }
+
+        .pricing-card h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary) !important;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="design-page-bg">
+        <!-- Animated Background Elements -->
+        <div class="gradient-mesh">
+            <!-- Morphing Color Blobs -->
+            <div class="color-blob blob-1"></div>
+            <div class="color-blob blob-2"></div>
+            <div class="color-blob blob-3"></div>
+            <div class="color-blob blob-4"></div>
+
+            <!-- Rotating Geometric Shapes -->
+            <div class="geo-shape geo-1"></div>
+            <div class="geo-shape geo-2"></div>
+            <div class="geo-shape geo-3"></div>
+
+            <!-- Color Palette Dots -->
+            <div class="palette-dots palette-1">
+                <div class="dot" style="background: #ff006e;"></div>
+                <div class="dot" style="background: #8338ec;"></div>
+                <div class="dot" style="background: #3a86ff;"></div>
+                <div class="dot" style="background: #ffbe0b;"></div>
+            </div>
+            <div class="palette-dots palette-2">
+                <div class="dot" style="background: #06d6a0;"></div>
+                <div class="dot" style="background: #118ab2;"></div>
+                <div class="dot" style="background: #ef476f;"></div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <header class="scrolled">
+            <div class="container">
+                <nav>
+                    <a href="index.html" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#portfolio">Work</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="contact.html?service=Graphic Design" class="btn btn-primary"
+                            style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get Started</a>
+                    </div>
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="design-page-content section-padding" style="padding-top: 10rem;">
+            <div class="container">
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+                <div class="fade-in visible">
+                    <h1 class="text-gradient">Graphic Design Services</h1>
+                    <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem;">
+                        We elevate your brand with premium visual storytelling. From iconic logos to high-converting
+                        UI/UX
+                        designs, we blend creativity with strategy.
+                    </p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Social Media -->
+                    <div class="pricing-card fade-in visible">
+                        <div class="service-icon"><i class="fas fa-hashtag"></i></div>
+                        <h3>Social Pack</h3>
+                        <div class="price-tag">$250 <span>/ month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 10 Custom Post Designs</li>
+                            <li><i class="fas fa-check"></i> 5 Story Templates</li>
+                            <li><i class="fas fa-check"></i> Platform Optimization</li>
+                            <li><i class="fas fa-check"></i> 2 Rounds of Revisions</li>
+                        </ul>
+                        <a href="contact.html?service=Graphic Design" class="btn btn-outline" style="width: 100%;">Get
+                            Started</a>
+                    </div>
+
+                    <!-- Branding -->
+                    <div class="pricing-card featured fade-in visible">
+                        <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+                        <h3>Brand Identity</h3>
+                        <div class="price-tag">$850 <span>/ project</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Primary & Secondary Logos</li>
+                            <li><i class="fas fa-check"></i> Color Palette & Typography</li>
+                            <li><i class="fas fa-check"></i> Brand Style Guide</li>
+                            <li><i class="fas fa-check"></i> Business Card Design</li>
+                        </ul>
+                        <a href="contact.html?service=Graphic Design" class="btn btn-primary"
+                            style="width: 100%;">Select Plan</a>
+                    </div>
+
+                    <!-- Web/UI Design -->
+                    <div class="pricing-card fade-in visible">
+                        <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                        <h3>UI/UX Design</h3>
+                        <div class="price-tag">$1,200 <span>/ project</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> High-Fidelity Wireframes</li>
+                            <li><i class="fas fa-check"></i> Interactive Prototypes</li>
+                            <li><i class="fas fa-check"></i> Responsive Web Design</li>
+                            <li><i class="fas fa-check"></i> Source Files Included</li>
+                        </ul>
+                        <a href="contact.html?service=Graphic Design" class="btn btn-outline" style="width: 100%;">Get
+                            Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="margin-top: 5rem;">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
+                        exceptional
+                        design and data strategies.</p>
+                    <ul class="social-links-new">
+                        <li class="icon-content">
+                            <a href="#" aria-label="X" data-social="x" class="social-link-new">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <div class="tooltip">X</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Instagram" data-social="instagram" class="social-link-new">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <div class="tooltip">Instagram</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="LinkedIn" data-social="linkedin" class="social-link-new">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="tooltip">LinkedIn</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Dribbble" data-social="dribbble" class="social-link-new">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <div class="tooltip">Dribbble</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="graphic-design.html">Graphic Design</a></li>
+                        <li><a href="video-editing.html">Video Editing</a></li>
+                        <li><a href="data-management.html">Data Management</a></li>
+                        <li><a href="web-development.html">Full-Website Building</a></li>
+                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
+                        <li><a href="social-management.html">Social Media Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 SUDOtech Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

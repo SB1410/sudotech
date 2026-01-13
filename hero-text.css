@@ -1,0 +1,91 @@
+/* Hero Title Creative Styling */
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    /* Adjust base size */
+}
+
+.hero-title .line {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    /* Reduced gap to help fit */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+.hero-title .highlight-text {
+    font-size: 1.0em;
+    /* Reduced further to ensure fit */
+    /* Slightly smaller than before */
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+    /* Tighter letter spacing */
+    text-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Specific gradients for each keyword for extra flair */
+.hero-title .line:nth-child(1) .highlight-text {
+    background: linear-gradient(to right, #06b6d4, #0891b2);
+    /* Vibrant Cyan/Teal */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title .line:nth-child(2) .highlight-text {
+    background: linear-gradient(to right, var(--accent), #fcd34d);
+    /* Gold/Peach */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title .line:nth-child(3) .highlight-text {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    /* Indigo/Purple */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title .sub-text {
+    font-size: 0.5em;
+    /* Smaller relative to highlight */
+    font-weight: 600;
+    /* Increased weight for visibility */
+    font-family: 'Courier New', monospace;
+    /* Tech feel */
+    color: var(--text-gray);
+    -webkit-text-fill-color: var(--text-gray);
+    /* Override parent h1 transparency */
+    letter-spacing: 1px;
+    opacity: 1;
+    /* Removed opacity for better visibility */
+    text-transform: none;
+    /* Keep natural case */
+    position: relative;
+    top: -5px;
+    white-space: nowrap;
+    /* Ensure sub-text never wraps */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title .line {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .hero-title .sub-text {
+        font-size: 0.4em;
+        top: 0;
+    }
+}
