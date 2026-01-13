@@ -91,7 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // =====================================================
     // Theme Toggle (Light/Dark Mode)
     // =====================================================
-    const themeToggle = document.getElementById('theme-toggle');
+    // Theme Toggle (Light/Dark Mode)
+    // =====================================================
+    // Select all theme toggle buttons (desktop and mobile)
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const htmlElement = document.documentElement;
 
     // Check for saved theme preference or default to light
@@ -101,16 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePlasmaWaveTheme('dark');
     }
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    if (themeToggles.length > 0) {
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-            htmlElement.setAttribute('data-theme', newTheme === 'dark' ? 'dark' : '');
-            localStorage.setItem('theme', newTheme);
+                htmlElement.setAttribute('data-theme', newTheme === 'dark' ? 'dark' : '');
+                localStorage.setItem('theme', newTheme);
 
-            // Update PlasmaWave background colors
-            updatePlasmaWaveTheme(newTheme);
+                // Update PlasmaWave background colors
+                updatePlasmaWaveTheme(newTheme);
+            });
         });
     }
 
