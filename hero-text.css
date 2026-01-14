@@ -81,7 +81,7 @@
     -webkit-text-fill-color: #e0e0e0;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments only */
 @media (max-width: 768px) {
     .hero-title .line {
         flex-direction: column;
