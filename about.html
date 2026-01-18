@@ -119,283 +119,14 @@
             will-change: transform;
         }
 
-        /* --- PREMIUM AMBIENT BACKGROUND --- */
-        .ambient-bg {
-            position: fixed;
-            /* Keep background fixed regardless of scroll */
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background: var(--bg-base);
-            overflow: hidden;
-            pointer-events: none;
-            /* Allow scrolling */
-            transform: translateZ(-1500px) scale(2);
-            /* Pins it far back but keeps it large */
-            transition: background var(--transition-theme);
-        }
+        /* ===== BACKGROUND ===== */
+        /* Using shared 'plasma-wave-canvas' and 'fixed-website-bg' from style.css */
 
-        /* ... (Orb styles remain) ... */
-
-        /* FOOTER STYLES (Redesigned) */
-        footer {
+        /* 3D Container Fixes */
+        .scene-container {
+            height: 300vh;
             position: relative;
-            z-index: 10;
-            /* Above the 3D scene when scrolling */
-            background: #000;
-            /* Consistent with Navbar */
-            color: #fff;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo-prompt {
-            color: var(--bg-accent-1);
-            font-weight: bold;
-        }
-
-        .logo-sudo {
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .logo-tech {
-            font-weight: 300;
-            opacity: 0.8;
-        }
-
-        footer h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        footer ul li a {
-            color: #94a3b8;
-            /* Slate-400 */
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        footer ul li a:hover {
-            color: var(--bg-accent-1);
-        }
-
-        .social-links-new {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            list-style: none;
-            padding: 0;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background: var(--bg-accent-1);
-            color: #000;
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .social-links-new {
-                justify-content: center;
-            }
-        }
-
-        /* Gradients / Orbs */
-        .ambient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            /* Increased blur for smoother mix */
-            transition: background var(--transition-theme);
-            will-change: transform;
-
-            /* Light Mode: No blend mode, just pure colorful opacity */
-            mix-blend-mode: normal;
-            opacity: 0.45;
-        }
-
-        [data-theme="dark"] .ambient-orb {
-            mix-blend-mode: screen;
-            /* Glows in dark mode */
-            opacity: 0.5;
-            filter: blur(120px);
-        }
-
-        /* Random moving orbs */
-        .orb-1 {
-            width: 60vw;
-            height: 60vw;
-            top: -20%;
-            left: -20%;
-            background: var(--bg-accent-1);
-            animation: wander-1 10s infinite alternate ease-in-out, color-shift 12s infinite linear;
-        }
-
-        .orb-2 {
-            width: 50vw;
-            height: 50vw;
-            bottom: -10%;
-            right: -10%;
-            background: var(--bg-accent-2);
-            animation: wander-2 12s infinite alternate ease-in-out, color-shift 15s infinite linear;
-        }
-
-        /* New 3rd orb for more randomness */
-        .orb-3 {
-            width: 40vw;
-            height: 40vw;
-            top: 40%;
-            left: 40%;
-            background: var(--bg-accent-3);
-            /* Use new 3rd accent */
-            opacity: 0.4;
-            animation: wander-3 11s infinite alternate ease-in-out, color-shift 14s infinite linear;
-        }
-
-        /* Complex Wandering Animations (High Intensity) */
-        @keyframes wander-1 {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-
-            25% {
-                transform: translate(150px, 80px) rotate(20deg) scale(1.2);
-            }
-
-            50% {
-                transform: translate(-50px, 150px) rotate(-10deg) scale(0.9);
-            }
-
-            75% {
-                transform: translate(-100px, -50px) rotate(10deg) scale(1.1);
-            }
-
-            100% {
-                transform: translate(50px, -80px) rotate(5deg) scale(1);
-            }
-        }
-
-        @keyframes wander-2 {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            33% {
-                transform: translate(-120px, -100px) scale(1.3);
-            }
-
-            66% {
-                transform: translate(80px, 80px) scale(0.8);
-            }
-
-            100% {
-                transform: translate(-40px, 40px) scale(1);
-            }
-        }
-
-        @keyframes wander-3 {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            25% {
-                transform: translate(100px, -120px) scale(1.2);
-            }
-
-            50% {
-                transform: translate(-80px, 80px) scale(0.9);
-            }
-
-            75% {
-                transform: translate(120px, 40px) scale(1.25);
-            }
-
-            100% {
-                transform: translate(-40px, -40px) scale(1);
-            }
-        }
-
-        /* Color Shifting Animation */
-        @keyframes color-shift {
-            0% {
-                filter: blur(100px) hue-rotate(0deg);
-            }
-
-            100% {
-                filter: blur(100px) hue-rotate(360deg);
-            }
-        }
-
-        /* Subtle Noise Overlay for Texture */
-        .noise-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-            opacity: 0.4;
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
 
 
@@ -547,24 +278,424 @@
             font-weight: 400;
         }
 
-        @media (max-width: 768px) {
+        /* ===== RESPONSIVE STYLES ===== */
+
+        /* Large Tablets (1024px and below) */
+        @media (max-width: 1024px) {
             .team-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .team-container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .team-title {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
             }
 
             .about-card {
-                padding: 2rem;
-                width: 90%;
+                padding: 3rem;
+                max-width: 700px;
+            }
+
+            .about-card h2 {
+                font-size: 2.5rem;
+            }
+
+            .viewport-3d {
+                perspective: 800px;
+            }
+        }
+
+        /* Small Tablets (768px and below) */
+        @media (max-width: 768px) {
+            .scene-container {
+                height: 250vh;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .team-container {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .team-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .team-member-card {
+                padding: 1.5rem;
+            }
+
+            .member-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .member-name {
+                font-size: 1.25rem;
+            }
+
+            .member-role {
+                font-size: 0.75rem;
+            }
+
+            .member-bio {
+                font-size: 0.85rem;
+            }
+
+            .about-card {
+                padding: 2rem 1.5rem;
+                width: 92%;
+                border-radius: 20px;
             }
 
             .about-card h1 {
                 font-size: 2.5rem;
             }
 
+            .about-card h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .about-card p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
             .orb-1,
+            .orb-2,
+            .orb-3 {
+                width: 70vw;
+                height: 70vw;
+            }
+
+            .viewport-3d {
+                perspective: 600px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .social-links-new {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Phones (576px and below) */
+        @media (max-width: 576px) {
+            .scene-container {
+                height: auto;
+                min-height: 100vh;
+                overflow: hidden;
+            }
+
+            .ambient-bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: none;
+                z-index: -1;
+                overflow: hidden;
+            }
+
+            .ambient-orb {
+                position: absolute;
+            }
+
+            .viewport-3d {
+                position: relative;
+                height: auto;
+                min-height: 100vh;
+                overflow: visible;
+                perspective: none;
+            }
+
+            .world-3d {
+                position: relative;
+                transform-style: flat;
+            }
+
+            .section-layer {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                height: auto;
+                min-height: auto;
+                padding: 0;
+            }
+
+            #layer-about {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                min-height: 100dvh;
+                padding-top: 5rem;
+                padding-bottom: 2rem;
+            }
+
+            #layer-team {
+                opacity: 1 !important;
+                transform: none !important;
+                min-height: auto;
+                padding-top: 2rem;
+                padding-bottom: 4rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .team-container {
+                padding: 0.5rem;
+                width: 95%;
+            }
+
+            .team-title {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .team-member-card {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            .team-member-card:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+
+            .member-img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
+            }
+
+            .member-name {
+                font-size: 1.15rem;
+            }
+
+            .member-role {
+                font-size: 0.7rem;
+                letter-spacing: 0.5px;
+            }
+
+            .member-bio {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
+            .about-card {
+                padding: 1.5rem 1.25rem;
+                width: 94%;
+                border-radius: 16px;
+                margin-top: 4rem;
+            }
+
+            .about-card small {
+                font-size: 0.7rem !important;
+                letter-spacing: 1.5px !important;
+            }
+
+            .about-card h1 {
+                font-size: 2rem;
+                letter-spacing: -1px;
+            }
+
+            .about-card h2 {
+                font-size: 1.6rem;
+                line-height: 1.4;
+            }
+
+            .about-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .about-card .fa-chevron-down {
+                font-size: 1.5rem !important;
+                margin-top: 13px !important;
+            }
+
+            .orb-1,
+            .orb-2,
+            .orb-3 {
+                width: 90vw;
+                height: 90vw;
+            }
+
+            .orb-1 {
+                top: -30%;
+                left: -30%;
+            }
+
             .orb-2 {
-                width: 80vw;
-                height: 80vw;
+                bottom: -20%;
+                right: -20%;
+            }
+
+            .orb-3 {
+                top: 30%;
+                left: 30%;
+            }
+
+            .viewport-3d {
+                perspective: 500px;
+            }
+
+            footer {
+                padding: 3rem 0 1.5rem;
+            }
+
+            .footer-content {
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            footer h4 {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            footer ul li {
+                margin-bottom: 0.6rem;
+            }
+
+            footer ul li a {
+                font-size: 0.9rem;
+            }
+
+            .social-icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .copyright {
+                margin-top: 2.5rem;
+                padding-top: 1.5rem;
+                font-size: 0.8rem;
+                padding-bottom: 0;
+            }
+
+            .copyright p {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Extra Small Phones (400px and below) */
+        @media (max-width: 400px) {
+            .about-card {
+                padding: 1.25rem 1rem;
+                width: 96%;
+            }
+
+            .about-card h2 {
+                font-size: 1.4rem;
+            }
+
+            .about-card p {
+                font-size: 0.9rem;
+            }
+
+            .team-title {
+                font-size: 1.5rem;
+            }
+
+            .member-img {
+                width: 85px;
+                height: 85px;
+            }
+
+            .member-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Landscape Mobile Orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .scene-container {
+                height: 350vh;
+            }
+
+            .about-card {
+                padding: 1.5rem;
+                margin-top: 5rem;
+            }
+
+            .about-card h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .about-card p {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .team-member-card {
+                padding: 1rem;
+            }
+
+            .member-img {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0.5rem;
+            }
+
+            .member-name {
+                font-size: 0.95rem;
+            }
+
+            .member-role {
+                font-size: 0.65rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .member-bio {
+                font-size: 0.7rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
+        /* Smooth touch scrolling for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .section-layer {
+                touch-action: pan-y;
+            }
+
+            .team-member-card:hover {
+                transform: none;
+            }
+
+            .team-member-card:active {
+                transform: translateY(-5px) scale(1.01);
             }
         }
     </style>
@@ -606,19 +737,17 @@
         </div>
     </header>
 
+    <!-- Fixed Plasma Wave Background (Matches Index) -->
+    <canvas id="plasma-wave-canvas" class="fixed-website-bg"></canvas>
+
+    <!-- Fixed Plasma Wave Background (Matches Index) -->
+    <canvas id="plasma-wave-canvas" class="fixed-website-bg"></canvas>
+
     <!-- Scroll Container (Defines the scrollable height) -->
     <div class="scene-container">
         <!-- Sticky 3D Viewport -->
         <div class="viewport-3d">
             <div class="world-3d" id="world">
-
-                <!-- PREMIUM AMBIENT BACKGROUND -->
-                <div class="ambient-bg">
-                    <div class="ambient-orb orb-1"></div>
-                    <div class="ambient-orb orb-2"></div>
-                    <div class="ambient-orb orb-3"></div>
-                    <div class="noise-overlay"></div>
-                </div>
 
                 <!-- LAYER 1: ABOUT (Starts at 0px Z) -->
                 <div class="section-layer" id="layer-about">
@@ -631,8 +760,11 @@
                             complex digital challenges.</p>
                         <p>We integrate aesthetic perfection with analytical rigor, ensuring everything we
                             create not only looks good but performs exceptionally.</p>
+                        <p
+                            style="margin-top: 3rem; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--text-secondary); opacity: 0.8; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">
+                            Scroll to know more</p>
                         <i class="fas fa-chevron-down"
-                            style="margin-top: 2rem; font-size: 2rem; animation: float 2s infinite; color: var(--text-secondary); opacity: 0.5;"></i>
+                            style="font-size: 1.5rem; margin-top: 10px; animation: float 2s infinite; color: var(--text-secondary); opacity: 0.6;"></i>
                     </div>
                 </div>
 
@@ -680,48 +812,77 @@
 
     <!-- Footer (Appears after 3D scroll) -->
     <footer>
-        <div class="footer-content">
-            <div>
-                <a href="#" class="logo" style="text-decoration: none; font-size: 1.5rem; color: white;">
-                    <span class="logo-prompt">&gt;</span>
-                    <span class="logo-sudo">SUDO</span>
-                    <span class="logo-tech">tech</span>
-                </a>
-                <p style="margin-top: 1rem; font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">
-                    Transforming ideas into digital reality through exceptional design and data strategies.
-                </p>
-                <div class="social-links-new">
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
+                        exceptional
+                        design and data strategies.</p>
+                    <ul class="social-links-new">
+                        <li class="icon-content">
+                            <a href="#" aria-label="X" data-social="x" class="social-link-new">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <div class="tooltip">X</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Instagram" data-social="instagram" class="social-link-new">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <div class="tooltip">Instagram</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="LinkedIn" data-social="linkedin" class="social-link-new">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="tooltip">LinkedIn</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Dribbble" data-social="dribbble" class="social-link-new">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <div class="tooltip">Dribbble</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="graphic-design.html">Graphic Design</a></li>
+                        <li><a href="video-editing.html">Video Editing</a></li>
+                        <li><a href="data-management.html">Data Management</a></li>
+                        <li><a href="web-development.html">Full-Website Building</a></li>
+                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
+                        <li><a href="social-management.html">Social Media Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="graphic-design.html">Graphic Design</a></li>
-                    <li><a href="video-editing.html">Video Editing</a></li>
-                    <li><a href="data-management.html">Data Management</a></li>
-                    <li><a href="web-development.html">Full-Website Building</a></li>
-                </ul>
+            <div class="copyright">
+                <p>&copy; 2024 SUDOtech Studio. All rights reserved.</p>
             </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 SUDOtech Agency. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="plasma-wave.js"></script>
     <script src="script.js"></script>
     <script>
         // 3D SCROLL LOGIC & INTERACTIVITY
@@ -729,15 +890,36 @@
         const layerAbout = document.getElementById('layer-about');
         const layerTeam = document.getElementById('layer-team');
         const container = document.querySelector('.scene-container');
-        const orbs = document.querySelectorAll('.ambient-orb');
 
         // Initial positions
         const aboutStartZ = 0;
         const teamStartZ = -1500;
         const animationDistance = 1500;
 
-        // Scroll Handler
+        // Check if mobile
+        const isMobile = () => window.innerWidth <= 576;
+
+        // Reset styles for mobile
+        const resetMobileStyles = () => {
+            if (isMobile()) {
+                layerAbout.style.transform = 'none';
+                layerAbout.style.opacity = '1';
+                layerTeam.style.transform = 'none';
+                layerTeam.style.opacity = '1';
+            }
+        };
+
+        // Initial check
+        resetMobileStyles();
+
+        // Scroll Handler - Only run on desktop
         window.addEventListener('scroll', () => {
+            // Skip 3D effects on mobile
+            if (isMobile()) {
+                resetMobileStyles();
+                return;
+            }
+
             const scrollY = window.scrollY;
             const containerHeight = container.offsetHeight - window.innerHeight;
             const progress = Math.min(Math.max(scrollY / containerHeight, 0), 1);
@@ -759,24 +941,20 @@
             // Moves from -1500 to 0 (Stops exactly at screen depth)
             const teamCurrentZ = teamStartZ + travelZ;
 
-            // Opacity Logic: Reach 100% faster (by 80% scroll)
-            let teamOpacity = (progress - 0.2) / 0.6;
-            if (teamOpacity < 0) teamOpacity = 0;
+            // Opacity Logic: APPEAR VERY EARLY
+            // Start fading in immediately (progress 0)
+            // Reach full opacity by 30% scroll (when they are still far back)
+            // This ensures they are visible well before reaching the "peak" (Z=0)
+            let teamOpacity = progress / 0.3;
             if (teamOpacity > 1) teamOpacity = 1;
 
             layerTeam.style.transform = `translate(-50%, -50%) translateZ(${teamCurrentZ}px)`;
             layerTeam.style.opacity = teamOpacity;
         }, { passive: true });
 
-        // Mouse Parallax for Background
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 2; // -1 to 1
-            const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-            orbs.forEach((orb, index) => {
-                const factor = (index + 1) * 30; // Different speeds
-                orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-            });
+        // Handle resize - reset when switching to mobile
+        window.addEventListener('resize', () => {
+            resetMobileStyles();
         });
     </script>
 </body>
