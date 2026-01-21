@@ -95,6 +95,90 @@
             margin-bottom: 2rem;
             cursor: pointer;
         }
+
+        /* Data Flow Background Styles */
+        .data-flow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -5;
+            pointer-events: none;
+        }
+
+        /* Dark mode (default for data page) */
+        body {
+            background: #151d2a;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #2dd4bf, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            color: #2dd4bf;
+        }
+
+        .back-link:hover {
+            color: #0ea5e9;
+        }
+
+        /* Light mode overrides */
+        html:not([data-theme="dark"]) body {
+            background: #f0f7fa;
+        }
+
+        html:not([data-theme="dark"]) .text-gradient {
+            background: linear-gradient(to right, #047857, #0369a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        html:not([data-theme="dark"]) .back-link {
+            color: #047857;
+        }
+
+        html:not([data-theme="dark"]) .back-link:hover {
+            color: #0369a1;
+        }
+
+        /* Adjust card styles for light mode */
+        html:not([data-theme="dark"]) .pricing-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(6, 182, 212, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        html:not([data-theme="dark"]) .pricing-card h3 {
+            color: #1a202c;
+        }
+
+        html:not([data-theme="dark"]) .price-tag {
+            color: #0d9488;
+        }
+
+        html:not([data-theme="dark"]) .price-tag span {
+            color: #64748b;
+        }
+
+        html:not([data-theme="dark"]) .pricing-features li {
+            color: #475569;
+        }
+
+        html:not([data-theme="dark"]) .pricing-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #0d9488;
+        }
+
+        html:not([data-theme="dark"]) .pricing-card.featured {
+            border-color: #0d9488;
+            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15);
+        }
     </style>
 </head>
 
@@ -133,8 +217,8 @@
         </div>
     </header>
 
-    <!-- Fixed Plasma Wave Background - Covers entire website -->
-    <canvas id="plasma-wave-canvas" class="fixed-website-bg"></canvas>
+    <!-- Fixed Data Flow Background - Data Management Theme -->
+    <canvas id="data-flow-canvas" class="fixed-website-bg data-flow-bg"></canvas>
 
     <section class="section-padding" style="padding-top: 10rem;">
         <div class="container">
@@ -142,7 +226,7 @@
 
             <div class="fade-in visible">
                 <h1 class="text-gradient">Data Management</h1>
-                <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem; color: #000000;">
+                <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem; color: var(--text-light);">
                     Organize, clean, and analyze your data for better decision making. We provide secure and efficient
                     data solutions tailored for your business.
                 </p>
@@ -265,7 +349,7 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="plasma-wave.js"></script>
+    <script src="data-flow-bg.js"></script>
 </body>
 
 </html>
