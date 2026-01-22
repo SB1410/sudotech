@@ -298,6 +298,101 @@
             margin-bottom: 2rem;
             cursor: pointer;
         }
+
+        /* Light mode overrides */
+        html:not([data-theme="dark"]) .design-page-bg {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 30%, #f3e5f5 60%, #fce4ec 100%);
+        }
+
+        html:not([data-theme="dark"]) .color-blob {
+            opacity: 0.15;
+        }
+
+        html:not([data-theme="dark"]) .blob-1 {
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+        }
+
+        html:not([data-theme="dark"]) .blob-2 {
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+        }
+
+        html:not([data-theme="dark"]) .blob-3 {
+            background: linear-gradient(135deg, #ffbe0b, #fb5607);
+        }
+
+        html:not([data-theme="dark"]) .blob-4 {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+
+        html:not([data-theme="dark"]) .geo-shape {
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        html:not([data-theme="dark"]) .geo-3 {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        html:not([data-theme="dark"]) .palette-dots {
+            opacity: 0.2;
+        }
+
+        html:not([data-theme="dark"]) .design-page-bg h1,
+        html:not([data-theme="dark"]) .design-page-bg h3,
+        html:not([data-theme="dark"]) .design-page-bg h4 {
+            color: #1a202c;
+        }
+
+        html:not([data-theme="dark"]) .design-page-bg p,
+        html:not([data-theme="dark"]) .design-page-bg .back-link {
+            color: #475569;
+        }
+
+        html:not([data-theme="dark"]) .design-page-bg footer {
+            background: #f8f9fa;
+        }
+
+        html:not([data-theme="dark"]) .design-page-bg footer h4,
+        html:not([data-theme="dark"]) .design-page-bg footer p,
+        html:not([data-theme="dark"]) .design-page-bg footer a {
+            color: #475569;
+        }
+
+        html:not([data-theme="dark"]) .pricing-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(139, 92, 246, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        html:not([data-theme="dark"]) .pricing-card h3 {
+            color: #1a202c;
+        }
+
+        html:not([data-theme="dark"]) .price-tag {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        html:not([data-theme="dark"]) .price-tag span {
+            color: #64748b;
+            -webkit-text-fill-color: #64748b;
+        }
+
+        html:not([data-theme="dark"]) .pricing-features li {
+            color: #475569;
+        }
+
+        html:not([data-theme="dark"]) .pricing-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        html:not([data-theme="dark"]) .pricing-card.featured {
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.25);
+        }
     </style>
 </head>
 
