@@ -97,11 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggles = document.querySelectorAll('.theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference or default to dark (premium experience)
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
     if (savedTheme === 'dark') {
-        htmlElement.setAttribute('data-theme', 'dark');
         updatePlasmaWaveTheme('dark');
+    } else {
+        updatePlasmaWaveTheme('light');
     }
 
     if (themeToggles.length > 0) {
