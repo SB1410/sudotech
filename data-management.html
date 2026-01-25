@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="SUDOtech Studio - Reliable Data Management Services. Data entry, cleaning, and professional analytics.">
-    <meta name="keywords" content="Data Entry, Data Cleaning, Data Analysis, Database Management, SUDOtech">
+        content="SUDOtech Studio - Reliable Data Management Services. Data entry, cleaning, and professional analytics to unlock business insights.">
+    <meta name="keywords"
+        content="Data Entry, Data Cleaning, Data Science, Business Intelligence, Database Management, SUDOtech">
     <meta name="author" content="SUDOtech Studio">
     <title>Data Management Services | SUDOtech Studio</title>
 
@@ -21,82 +22,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service-pages.css">
+
     <style>
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            background: rgba(30, 41, 59, 0.9);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .pricing-card h3 {
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .price-tag {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 1.5rem 0;
-        }
-
-        .price-tag span {
-            font-size: 1rem;
-            color: #ffffff;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            margin-bottom: 0.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .pricing-features i {
-            color: var(--primary);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-
-        /* Data Flow Background Styles */
+        /* =====================================================
+           PRESERVED BACKGROUND - DO NOT MODIFY
+           ===================================================== */
         .data-flow-bg {
             position: fixed;
             top: 0;
@@ -107,77 +38,117 @@
             pointer-events: none;
         }
 
-        /* Dark mode (default for data page) */
+        /* Page-specific overrides for Data Theme (Teal/Blue) */
+
+        /* Dark mode (default) */
         body {
-            background: #151d2a;
+            background-color: #151d2a;
+            /* Deep navy used in original */
         }
 
-        .text-gradient {
-            background: linear-gradient(to right, #2dd4bf, #0ea5e9);
+        html:not([data-theme="dark"]) body {
+            background-color: #f0f7fa;
+            /* Light cyan used in original */
+        }
+
+        /* Specific Gradient for this page */
+        .dm-gradient {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 50%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .back-link {
-            color: #2dd4bf;
+        html:not([data-theme="dark"]) .dm-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #0284c7 50%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .back-link:hover {
+        /* Tint adjustments for glass cards on this page */
+        .sp-service-card:hover,
+        .sp-problem-card:hover,
+        .sp-pricing-card:hover {
+            border-color: #0ea5e9;
+        }
+
+        .sp-service-tag {
+            background: rgba(14, 165, 233, 0.1);
             color: #0ea5e9;
         }
 
-        /* Light mode overrides */
-        html:not([data-theme="dark"]) body {
-            background: #f0f7fa;
+        .sp-service-card:hover {
+            box-shadow: 0 0 40px rgba(14, 165, 233, 0.2);
         }
 
-        html:not([data-theme="dark"]) .text-gradient {
-            background: linear-gradient(to right, #047857, #0369a1);
+        .sp-step-circle {
+            border-color: #0ea5e9;
+        }
+
+        .sp-step-circle i {
+            color: #0ea5e9;
+        }
+
+        .sp-process-step:hover .sp-step-circle {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
+        }
+
+        .sp-process-timeline::before {
+            background: linear-gradient(90deg, #2dd4bf, #0ea5e9, #3b82f6);
+        }
+
+        .sp-service-icon {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
+            box-shadow: 0 8px 25px -8px rgba(14, 165, 233, 0.4);
+        }
+
+        .sp-hero-cta,
+        .sp-cta-btn,
+        .sp-btn-primary {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.5);
+        }
+
+        .sp-hero-cta:hover,
+        .sp-cta-btn:hover,
+        .sp-btn-primary:hover {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
+            box-shadow: 0 15px 40px -10px rgba(14, 165, 233, 0.6);
+        }
+
+        .sp-btn-outline {
+            color: #0ea5e9;
+            border-color: #0ea5e9;
+        }
+
+        .sp-btn-outline:hover {
+            background: #0ea5e9;
+        }
+
+        .sp-stat-number {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        html:not([data-theme="dark"]) .back-link {
-            color: #047857;
+        .sp-pricing-card.featured {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
         }
 
-        html:not([data-theme="dark"]) .back-link:hover {
-            color: #0369a1;
+        .sp-pricing-card.featured::before {
+            background: linear-gradient(135deg, #2dd4bf, #0ea5e9);
         }
 
-        /* Adjust card styles for light mode */
-        html:not([data-theme="dark"]) .pricing-card {
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(6, 182, 212, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        .sp-plan-icon {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
         }
 
-        html:not([data-theme="dark"]) .pricing-card h3 {
-            color: #1a202c;
-        }
-
-        html:not([data-theme="dark"]) .price-tag {
-            color: #0d9488;
-        }
-
-        html:not([data-theme="dark"]) .price-tag span {
-            color: #64748b;
-        }
-
-        html:not([data-theme="dark"]) .pricing-features li {
-            color: #475569;
-        }
-
-        html:not([data-theme="dark"]) .pricing-card:hover {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: #0d9488;
-        }
-
-        html:not([data-theme="dark"]) .pricing-card.featured {
-            border-color: #0d9488;
-            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15);
+        .sp-problem-card::before {
+            background: linear-gradient(90deg, #2dd4bf, #0ea5e9);
         }
     </style>
 </head>
@@ -199,8 +170,7 @@
                     <a href="index.html#portfolio">Work</a>
                     <a href="about.html">About</a>
                     <a href="contact.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get
-                        Started</a>
+                        style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get Started</a>
                     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
                         <i class="fas fa-sun"></i>
@@ -217,67 +187,448 @@
         </div>
     </header>
 
-    <!-- Fixed Data Flow Background - Data Management Theme -->
+    <!-- PRESERVED: Data Flow Background Canvas -->
     <canvas id="data-flow-canvas" class="fixed-website-bg data-flow-bg"></canvas>
 
-    <section class="section-padding" style="padding-top: 10rem;">
+    <!-- =====================================================
+         SECTION 1: Hero
+         ===================================================== -->
+    <section class="sp-hero">
         <div class="container">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="sp-hero-content">
+                <div class="sp-hero-badge" style="border-color: rgba(14, 165, 233, 0.3);">
+                    <i class="fas fa-database" style="color: #0ea5e9;"></i>
+                    <span>99.9% Data Accuracy Guaranteed</span>
+                </div>
 
-            <div class="fade-in visible">
-                <h1 class="text-gradient">Data Management</h1>
-                <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem; color: var(--text-light);">
-                    Organize, clean, and analyze your data for better decision making. We provide secure and efficient
-                    data solutions tailored for your business.
+                <h1 class="dm-gradient">Turn Raw Data Into Business Intelligence</h1>
+
+                <p class="sp-hero-subtitle">
+                    We organize, clean, and analyze your messy data streams to unlock actionable insights
+                    that drive smarter decisions and operational efficiency.
+                </p>
+
+                <a href="contact.html" class="sp-hero-cta">
+                    <i class="fas fa-chart-line"></i>
+                    Optimize Your Data
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2: Problems We Solve
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">The
+                    Issue</span>
+                <h2 class="sp-section-title">Is Your Data a Liability?</h2>
+                <p class="sp-section-subtitle">
+                    Unmanaged data isn't just useless—it's dangerous.
                 </p>
             </div>
 
-            <div class="pricing-grid">
-                <!-- Entry -->
-                <div class="pricing-card fade-in visible">
-                    <div class="service-icon"><i class="fas fa-file-invoice"></i></div>
-                    <h3>Entry Pack</h3>
-                    <div class="price-tag">$100 <span>/ project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Basic Data Entry</li>
-                        <li><i class="fas fa-check"></i> Spreadsheet Formatting</li>
-                        <li><i class="fas fa-check"></i> 500 Records Coverage</li>
-                        <li><i class="fas fa-check"></i> Data Accuracy Check</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+            <div class="sp-problems-grid">
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon" style="background: rgba(239, 68, 68, 0.1);">
+                        <i class="fas fa-file-excel" style="color: #ef4444;"></i>
+                    </div>
+                    <h3>Spreadsheet Chaos</h3>
+                    <p>Thousands of disconnected files, version control nightmares, and manual entry errors slowing you
+                        down.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span style="color: #0ea5e9;">We centralize and structure everything</span>
+                    </div>
                 </div>
 
-                <!-- Cleaning -->
-                <div class="pricing-card featured fade-in visible">
-                    <div class="service-icon"><i class="fas fa-broom"></i></div>
-                    <h3>Data Cleaning</h3>
-                    <div class="price-tag">$350 <span>/ project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Duplicate Removal</li>
-                        <li><i class="fas fa-check"></i> Syntax Error Correction</li>
-                        <li><i class="fas fa-check"></i> Database Structuring</li>
-                        <li><i class="fas fa-check"></i> Format Standardization</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-primary" style="width: 100%;">Select Plan</a>
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon" style="background: rgba(239, 68, 68, 0.1);">
+                        <i class="fas fa-filter" style="color: #ef4444;"></i>
+                    </div>
+                    <h3>Dirty, Duplicate Data</h3>
+                    <p>Inaccurate records and duplicates are skewing your analytics and wasting marketing budget.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span style="color: #0ea5e9;">We clean and validate every record</span>
+                    </div>
                 </div>
 
-                <!-- Analytics -->
-                <div class="pricing-card fade-in visible">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Analytics</h3>
-                    <div class="price-tag">$800 <span>/ project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Advanced Analysis</li>
-                        <li><i class="fas fa-check"></i> Insight Dashboards</li>
-                        <li><i class="fas fa-check"></i> Predictive Modelling</li>
-                        <li><i class="fas fa-check"></i> Weekly Status Reports</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon" style="background: rgba(239, 68, 68, 0.1);">
+                        <i class="fas fa-eye-slash" style="color: #ef4444;"></i>
+                    </div>
+                    <h3>Flying Blind</h3>
+                    <p>You have the data, but no way to visualize it. Decisions are made on gut feeling instead of
+                        facts.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span style="color: #0ea5e9;">We build clear, real-time dashboards</span>
+                    </div>
+                </div>
+
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon" style="background: rgba(239, 68, 68, 0.1);">
+                        <i class="fas fa-lock-open" style="color: #ef4444;"></i>
+                    </div>
+                    <h3>Security Risks</h3>
+                    <p>Sensitive customer information stored insecurely, exposing your business to compliance risks.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span style="color: #0ea5e9;">We implement secure data protocols</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- =====================================================
+         SECTION 3: Services & Capabilities
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag"
+                    style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">Capabilities</span>
+                <h2 class="sp-section-title">End-to-End Data Solutions</h2>
+                <p class="sp-section-subtitle">
+                    From manual entry to advanced predictive modeling.
+                </p>
+            </div>
+
+            <div class="sp-services-grid">
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Data Entry & Processing</h3>
+                    <p>Accurate, high-speed manual data entry and automated processing for
+                        forms, invoices, survey responses, and legacy documents.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">Digitization</span>
+                        <span class="sp-service-tag">OCR</span>
+                        <span class="sp-service-tag">Validation</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Data Cleaning</h3>
+                    <p>Rigorous scrubbing of your datasets to remove duplicates, correct formatting errors,
+                        standardize values, and fill missing information.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">De-duplication</span>
+                        <span class="sp-service-tag">Standardization</span>
+                        <span class="sp-service-tag">Enrichment</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Analytics & Dashboards</h3>
+                    <p>Custom PowerBI or Tableau dashboards that visualize your KPIs in real-time,
+                        making trends and patterns instantly obvious.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">PowerBI</span>
+                        <span class="sp-service-tag">Tableau</span>
+                        <span class="sp-service-tag">Reporting</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Database Management</h3>
+                    <p>Design, implementation, and maintenance of robust SQL/NoSQL databases
+                        that scale with your business growth.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">SQL</span>
+                        <span class="sp-service-tag">MongoDB</span>
+                        <span class="sp-service-tag">Architecture</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Migration & Integration</h3>
+                    <p>Seamlessly moving data between systems (CRM to ERP, Legacy to Cloud)
+                        without loss or corruption.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">ETL Pipelines</span>
+                        <span class="sp-service-tag">API Integration</span>
+                        <span class="sp-service-tag">Cloud Migration</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Predictive Analysis</h3>
+                    <p>Using historical data and machine learning to forecast trends, customer
+                        behavior, and market shifts before they happen.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">Forecasting</span>
+                        <span class="sp-service-tag">Trend Analysis</span>
+                        <span class="sp-service-tag">ML Models</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4: Process Timeline
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag"
+                    style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">Methodology</span>
+                <h2 class="sp-section-title">The Data Lifecycle</h2>
+                <p class="sp-section-subtitle">
+                    How we turn chaos into clarity.
+                </p>
+            </div>
+
+            <div class="sp-process-timeline">
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Audit</h4>
+                        <p>Assess current data sources & quality</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Structure</h4>
+                        <p>Define schemas & storage architecture</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Clean</h4>
+                        <p>Purge errors & standardize formats</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Analyze</h4>
+                        <p>Extract patterns & actionable insights</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Report</h4>
+                        <p>Deliver visualized Business Intelligence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5: Results & Proof
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">Metrics</span>
+                <h2 class="sp-section-title">Measurable Impact</h2>
+                <p class="sp-section-subtitle">
+                    Data doesn't lie. Neither do our results.
+                </p>
+            </div>
+
+            <div class="sp-stats-grid">
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="1" data-suffix="M+">0M+</div>
+                    <div class="sp-stat-label">Records Processed</div>
+                </div>
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="99.9" data-suffix="%">0%</div>
+                    <div class="sp-stat-label">Accuracy Rate</div>
+                </div>
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="60" data-suffix="%">0%</div>
+                    <div class="sp-stat-label">Time Saved</div>
+                </div>
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="150" data-suffix="+">0+</div>
+                    <div class="sp-stat-label">Pipelines Built</div>
+                </div>
+            </div>
+
+            <div class="sp-testimonials">
+                <div class="sp-testimonial-card sp-reveal">
+                    <p class="sp-testimonial-quote">
+                        We were drowning in duplicate leads. SUDOtech cleaned our 50k+ record database and synced it
+                        with Salesforce. Our marketing team is finally effective again.
+                    </p>
+                    <div class="sp-testimonial-author">
+                        <div class="sp-author-avatar">RJ</div>
+                        <div class="sp-author-info">
+                            <h5>Robert Jenkins</h5>
+                            <p>COO, FinServe Globals</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-testimonial-card sp-reveal">
+                    <p class="sp-testimonial-quote">
+                        The PowerBI dashboards they built gave us visibility we never had. We identified a $50k/month
+                        revenue leak within days of launch.
+                    </p>
+                    <div class="sp-testimonial-author">
+                        <div class="sp-author-avatar">ES</div>
+                        <div class="sp-author-info">
+                            <h5>Elena Sanchez</h5>
+                            <p>Director of Operations, RetailNova</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6: Pricing
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">Plans</span>
+                <h2 class="sp-section-title">Data Solutions</h2>
+                <p class="sp-section-subtitle">
+                    Scalable packages for businesses of all sizes.
+                </p>
+            </div>
+
+            <div class="sp-pricing-grid">
+                <!-- Entry Pack -->
+                <div class="sp-pricing-card sp-reveal">
+                    <div class="sp-plan-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Entry Pack</h3>
+                    <p class="sp-plan-tagline">Basic entry & formatting</p>
+                    <div class="sp-plan-price">
+                        <span class="sp-price-amount">$100</span>
+                        <span class="sp-price-period">/ project</span>
+                    </div>
+                    <ul class="sp-plan-features">
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Basic Data Entry</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Spreadsheet Formatting</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Up to 500 Records</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Accuracy Verification</li>
+                    </ul>
+                    <a href="contact.html?service=Data%20Management" class="sp-btn-outline">Get Started</a>
+                </div>
+
+                <!-- Cleaning - Featured -->
+                <div class="sp-pricing-card featured sp-reveal">
+                    <div class="sp-plan-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Data Cleaning</h3>
+                    <p class="sp-plan-tagline">Deep cleanse for existing data</p>
+                    <div class="sp-plan-price">
+                        <span class="sp-price-amount">$350</span>
+                        <span class="sp-price-period">/ project</span>
+                    </div>
+                    <ul class="sp-plan-features">
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Duplicate Removal</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Syntax Error Correction</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Database Structuring</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Up to 5,000 Records</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Validation Report</li>
+                    </ul>
+                    <a href="contact.html?service=Data%20Management" class="sp-btn-primary">Select Plan</a>
+                </div>
+
+                <!-- Analytics -->
+                <div class="sp-pricing-card sp-reveal">
+                    <div class="sp-plan-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics</h3>
+                    <p class="sp-plan-tagline">Insights & visualization</p>
+                    <div class="sp-plan-price">
+                        <span class="sp-price-amount">$800</span>
+                        <span class="sp-price-period">/ project</span>
+                    </div>
+                    <ul class="sp-plan-features">
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Advanced Analysis</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Custom Dashboard (PowerBI)</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Predictive Modeling</li>
+                        <li><i class="fas fa-check" style="color: #2dd4bf;"></i> Weekly Insights Report</li>
+                    </ul>
+                    <a href="contact.html?service=Data%20Management" class="sp-btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7: Final CTA
+         ===================================================== -->
+    <section class="sp-final-cta">
+        <div class="container">
+            <div class="sp-cta-content sp-reveal">
+                <h2 class="dm-gradient">Stop Guessing. Start Knowing.</h2>
+                <p>
+                    Your data is your most valuable asset. Let's clean it up and put it to work.
+                </p>
+                <a href="contact.html" class="sp-cta-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Get a Free Data Audit
+                </a>
+                <div class="sp-cta-reassurance">
+                    <div class="sp-reassurance-item">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span>100% Confidential</span>
+                    </div>
+                    <div class="sp-reassurance-item">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="sp-reassurance-item">
+                        <i class="fas fa-check-circle" style="color: #2dd4bf;"></i>
+                        <span>Secure Transfer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer style="margin-top: 5rem;">
         <div class="container">
             <div class="footer-content">
@@ -289,8 +640,7 @@
                         <span class="logo-cursor"></span>
                     </a>
                     <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
-                        exceptional
-                        design and data strategies.</p>
+                        exceptional design and data strategies.</p>
                     <ul class="social-links-new">
                         <li class="icon-content">
                             <a href="#" aria-label="X" data-social="x" class="social-link-new">
@@ -328,14 +678,14 @@
                         <li><a href="video-editing.html">Video Editing</a></li>
                         <li><a href="data-management.html">Data Management</a></li>
                         <li><a href="web-development.html">Full-Website Building</a></li>
-                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
+                        <li><a href="product-photography.html">Product Photography</a></li>
                         <li><a href="social-management.html">Social Media Management</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Company</h4>
                     <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -350,6 +700,7 @@
 
     <script src="script.js"></script>
     <script src="data-flow-bg.js"></script>
+    <script src="service-pages.js"></script>
 </body>
 
 </html>

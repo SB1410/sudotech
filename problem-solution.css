@@ -1,0 +1,137 @@
+/* Problem Solution Section */
+.problem-solution-section {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.problem-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.problem-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.highlight-orange {
+    color: var(--primary);
+}
+
+.problem-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    perspective: 1000px;
+    /* Enable 3D space */
+}
+
+.comparison-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+    /* Fast transform for mouse */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+/* Before Card - Red */
+.card-before {
+    box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.3), inset 0 0 20px rgba(220, 38, 38, 0.1);
+}
+
+.card-before:hover {
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.6), 0 0 30px rgba(220, 38, 38, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-before .icon-wrapper {
+    color: #ef4444;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.card-before h3 {
+    color: #ef4444;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* After Card - Green */
+.card-after {
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.1);
+}
+
+.card-after:hover {
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.6), 0 0 30px rgba(34, 197, 94, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-after .icon-wrapper {
+    color: #22c55e;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-after h3 {
+    color: #22c55e;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.compare-text {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+
+.arrow-divider {
+    font-size: 2.5rem;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .comparison-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .arrow-divider {
+        transform: rotate(90deg);
+    }
+}

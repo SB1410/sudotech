@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="SUDOtech Studio - Professional Video Editing Services. Cinematic trailers, commercial edits, and motion graphics.">
-    <meta name="keywords" content="Video Editing, Post-Production, Motion Graphics, Cinematic Video, SUDOtech">
+        content="SUDOtech Studio - Professional Video Editing Services. Cinematic storytelling, motion graphics, and commercial post-production that captivates audiences.">
+    <meta name="keywords"
+        content="Video Editing, Post-Production, Motion Graphics, Color Grading, Commercial Video, SUDOtech">
     <meta name="author" content="SUDOtech Studio">
     <title>Video Editing Services | SUDOtech Studio</title>
 
@@ -21,79 +22,15 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service-pages.css">
+
     <style>
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            background: rgba(30, 41, 59, 0.9);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .pricing-card h3 {
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .price-tag {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 1.5rem 0;
-        }
-
-        .price-tag span {
-            font-size: 1rem;
-            color: #ffffff;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            margin-bottom: 0.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .pricing-features i {
-            color: var(--primary);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            cursor: pointer;
+        /* Page-specific gradient for video */
+        .ve-gradient {
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
@@ -115,8 +52,7 @@
                     <a href="index.html#portfolio">Work</a>
                     <a href="about.html">About</a>
                     <a href="contact.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get
-                        Started</a>
+                        style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get Started</a>
                     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
                         <i class="fas fa-sun"></i>
@@ -133,67 +69,443 @@
         </div>
     </header>
 
-    <!-- Cinematic Film Background - Clean, minimal, professional -->
+    <!-- PRESERVED: Cinematic Film Background Canvas -->
     <canvas id="cinematic-bg-canvas" class="fixed-website-bg"></canvas>
 
-    <section class="section-padding" style="padding-top: 10rem;">
+    <!-- =====================================================
+         SECTION 1: Hero
+         ===================================================== -->
+    <section class="sp-hero">
         <div class="container">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="sp-hero-content">
+                <div class="sp-hero-badge">
+                    <i class="fas fa-film"></i>
+                    <span>500+ Videos Delivered | 10M+ Views</span>
+                </div>
 
-            <div class="fade-in visible">
-                <h1 class="text-gradient">Video Editing Services</h1>
-                <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem; color: var(--text-gray);">
-                    We bring your vision to life with cinematic storytelling. From viral short-form content to high-end
-                    commercial post-production.
+                <h1 class="ve-gradient">Cinematic Stories That Convert</h1>
+
+                <p class="sp-hero-subtitle">
+                    From viral short-form content to high-end commercial post-production,
+                    we bring your vision to life with stunning visual storytelling.
+                </p>
+
+                <a href="contact.html" class="sp-hero-cta">
+                    <i class="fas fa-play-circle"></i>
+                    Start Your Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2: Problems We Solve
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag">The Challenge</span>
+                <h2 class="sp-section-title">Bad Video Kills Engagement</h2>
+                <p class="sp-section-subtitle">
+                    Here's what's stopping your content from connecting.
                 </p>
             </div>
 
-            <div class="pricing-grid">
-                <!-- Basic -->
-                <div class="pricing-card fade-in visible">
-                    <div class="service-icon"><i class="fas fa-cut"></i></div>
-                    <h3>Basic Edit</h3>
-                    <div class="price-tag">$150 <span>/ project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 60 Sec Video Length</li>
-                        <li><i class="fas fa-check"></i> Basic Color Correction</li>
-                        <li><i class="fas fa-check"></i> Standard Transitions</li>
-                        <li><i class="fas fa-check"></i> 1 Revision Included</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+            <div class="sp-problems-grid">
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon">
+                        <i class="fas fa-forward"></i>
+                    </div>
+                    <h3>Viewers Skip in Seconds</h3>
+                    <p>Your intros don't hook. People scroll past before your message even lands.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We craft hooks that stop the scroll</span>
+                    </div>
                 </div>
 
-                <!-- Cinematic -->
-                <div class="pricing-card featured fade-in visible">
-                    <div class="service-icon"><i class="fas fa-film"></i></div>
-                    <h3>Cinematic Edit</h3>
-                    <div class="price-tag">$450 <span>/ project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Up to 5 Mins Length</li>
-                        <li><i class="fas fa-check"></i> Advanced Color Grading</li>
-                        <li><i class="fas fa-check"></i> Motion Graphics & Titles</li>
-                        <li><i class="fas fa-check"></i> Sound Design & Mixing</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-primary" style="width: 100%;">Select Plan</a>
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon">
+                        <i class="fas fa-volume-xmark"></i>
+                    </div>
+                    <h3>Poor Audio Quality</h3>
+                    <p>Background noise, uneven levels, and missing sound design make videos feel amateur.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We deliver broadcast-quality audio</span>
+                    </div>
                 </div>
 
-                <!-- Commercial -->
-                <div class="pricing-card fade-in visible">
-                    <div class="service-icon"><i class="fas fa-ad"></i></div>
-                    <h3>Commercial</h3>
-                    <div class="price-tag">$900 <span>/ project</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Full Ad Production</li>
-                        <li><i class="fas fa-check"></i> Narrative Storytelling</li>
-                        <li><i class="fas fa-check"></i> 4K High-End Export</li>
-                        <li><i class="fas fa-check"></i> Unlimited Revisions</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Flat, Boring Visuals</h3>
+                    <p>No color grading, no motion graphics, no visual polish. Just raw, uninspiring footage.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We add cinematic depth and energy</span>
+                    </div>
+                </div>
+
+                <div class="sp-problem-card sp-reveal">
+                    <div class="sp-problem-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Slow Turnaround Times</h3>
+                    <p>Waiting weeks for edits means missing trending moments and campaign deadlines.</p>
+                    <div class="sp-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We deliver fast without cutting corners</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- =====================================================
+         SECTION 3: Services & Capabilities
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag">What We Edit</span>
+                <h2 class="sp-section-title">Complete Video Production Suite</h2>
+                <p class="sp-section-subtitle">
+                    Every format, every platform, expertly crafted.
+                </p>
+            </div>
+
+            <div class="sp-services-grid">
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <h3>Short-Form Content</h3>
+                    <p>TikToks, Reels, and Shorts optimized for virality with punchy edits,
+                        trending audio, and scroll-stopping hooks.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">Reels</span>
+                        <span class="sp-service-tag">TikToks</span>
+                        <span class="sp-service-tag">Shorts</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Long-Form Videos</h3>
+                    <p>YouTube videos, documentaries, and brand films with narrative structure,
+                        pacing, and professional polish.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">YouTube</span>
+                        <span class="sp-service-tag">Documentaries</span>
+                        <span class="sp-service-tag">Brand Films</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Motion Graphics</h3>
+                    <p>Animated titles, lower thirds, logo reveals, and kinetic typography
+                        that elevate production value.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">Titles</span>
+                        <span class="sp-service-tag">Lower Thirds</span>
+                        <span class="sp-service-tag">Animations</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <h3>Color Grading</h3>
+                    <p>Cinematic color correction and grading that sets the mood and
+                        creates visual consistency across your content.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">LUT Creation</span>
+                        <span class="sp-service-tag">Correction</span>
+                        <span class="sp-service-tag">Cinematic Look</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-volume-high"></i>
+                    </div>
+                    <h3>Sound Design & Mixing</h3>
+                    <p>Professional audio cleanup, music licensing, SFX layering,
+                        and final mix for broadcast-ready output.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">Audio Cleanup</span>
+                        <span class="sp-service-tag">SFX</span>
+                        <span class="sp-service-tag">Mixing</span>
+                    </div>
+                </div>
+
+                <div class="sp-service-card sp-reveal">
+                    <div class="sp-service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Commercial Ads</h3>
+                    <p>High-converting video ads for social media, YouTube pre-roll,
+                        and display campaigns that drive ROI.</p>
+                    <div class="sp-service-tags">
+                        <span class="sp-service-tag">Social Ads</span>
+                        <span class="sp-service-tag">YouTube Ads</span>
+                        <span class="sp-service-tag">UGC Style</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4: Process Timeline
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag">Our Workflow</span>
+                <h2 class="sp-section-title">From Raw Footage to Final Cut</h2>
+                <p class="sp-section-subtitle">
+                    A streamlined process that delivers quality on time.
+                </p>
+            </div>
+
+            <div class="sp-process-timeline">
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Receive</h4>
+                        <p>Secure upload of your footage & brief</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Assemble</h4>
+                        <p>First cut with structure & pacing</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Polish</h4>
+                        <p>Color, audio, graphics, and effects</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Review</h4>
+                        <p>Your feedback, our refinements</p>
+                    </div>
+                </div>
+
+                <div class="sp-process-step sp-reveal">
+                    <div class="sp-step-circle">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="sp-step-content">
+                        <h4>Deliver</h4>
+                        <p>Final export in all formats</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5: Results & Proof
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag">Our Impact</span>
+                <h2 class="sp-section-title">Videos That Perform</h2>
+                <p class="sp-section-subtitle">
+                    Real results from real clients.
+                </p>
+            </div>
+
+            <div class="sp-stats-grid">
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="500" data-suffix="+">0+</div>
+                    <div class="sp-stat-label">Videos Delivered</div>
+                </div>
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="10" data-suffix="M+">0M+</div>
+                    <div class="sp-stat-label">Total Views Generated</div>
+                </div>
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="85" data-suffix="%">0%</div>
+                    <div class="sp-stat-label">Avg. Retention Boost</div>
+                </div>
+                <div class="sp-stat-card sp-reveal">
+                    <div class="sp-stat-number" data-value="48" data-suffix="hr">0hr</div>
+                    <div class="sp-stat-label">Avg. Turnaround</div>
+                </div>
+            </div>
+
+            <div class="sp-testimonials">
+                <div class="sp-testimonial-card sp-reveal">
+                    <p class="sp-testimonial-quote">
+                        Our YouTube retention went from 30% to over 65% after switching to SUDOtech.
+                        The pacing and hooks they create are next level.
+                    </p>
+                    <div class="sp-testimonial-author">
+                        <div class="sp-author-avatar">DR</div>
+                        <div class="sp-author-info">
+                            <h5>David Rodriguez</h5>
+                            <p>Creator, TechReview Channel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-testimonial-card sp-reveal">
+                    <p class="sp-testimonial-quote">
+                        They turned our product footage into a commercial that looked like it cost 10x
+                        what we paid. ROAS increased by 3x on our video ads.
+                    </p>
+                    <div class="sp-testimonial-author">
+                        <div class="sp-author-avatar">LW</div>
+                        <div class="sp-author-info">
+                            <h5>Lisa Wong</h5>
+                            <p>Marketing Director, EcoBottle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6: Pricing
+         ===================================================== -->
+    <section class="sp-section">
+        <div class="container">
+            <div class="sp-section-header sp-reveal">
+                <span class="sp-section-tag">Investment</span>
+                <h2 class="sp-section-title">Editing Packages</h2>
+                <p class="sp-section-subtitle">
+                    Professional quality at every budget level.
+                </p>
+            </div>
+
+            <div class="sp-pricing-grid">
+                <!-- Basic Edit -->
+                <div class="sp-pricing-card sp-reveal">
+                    <div class="sp-plan-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Basic Edit</h3>
+                    <p class="sp-plan-tagline">Quick turnaround for simple projects</p>
+                    <div class="sp-plan-price">
+                        <span class="sp-price-amount">$150</span>
+                        <span class="sp-price-period">/ project</span>
+                    </div>
+                    <ul class="sp-plan-features">
+                        <li><i class="fas fa-check"></i> Up to 60 Seconds</li>
+                        <li><i class="fas fa-check"></i> Basic Color Correction</li>
+                        <li><i class="fas fa-check"></i> Standard Transitions</li>
+                        <li><i class="fas fa-check"></i> 1 Revision Round</li>
+                    </ul>
+                    <a href="contact.html?service=Video%20Editing" class="sp-btn-outline">Get Started</a>
+                </div>
+
+                <!-- Cinematic Edit - Featured -->
+                <div class="sp-pricing-card featured sp-reveal">
+                    <div class="sp-plan-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Cinematic Edit</h3>
+                    <p class="sp-plan-tagline">Full post-production treatment</p>
+                    <div class="sp-plan-price">
+                        <span class="sp-price-amount">$450</span>
+                        <span class="sp-price-period">/ project</span>
+                    </div>
+                    <ul class="sp-plan-features">
+                        <li><i class="fas fa-check"></i> Up to 5 Minutes</li>
+                        <li><i class="fas fa-check"></i> Advanced Color Grading</li>
+                        <li><i class="fas fa-check"></i> Motion Graphics & Titles</li>
+                        <li><i class="fas fa-check"></i> Sound Design & Mixing</li>
+                        <li><i class="fas fa-check"></i> 3 Revision Rounds</li>
+                    </ul>
+                    <a href="contact.html?service=Video%20Editing" class="sp-btn-primary">Select Plan</a>
+                </div>
+
+                <!-- Commercial -->
+                <div class="sp-pricing-card sp-reveal">
+                    <div class="sp-plan-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Commercial</h3>
+                    <p class="sp-plan-tagline">Broadcast-ready ad production</p>
+                    <div class="sp-plan-price">
+                        <span class="sp-price-amount">$900</span>
+                        <span class="sp-price-period">/ project</span>
+                    </div>
+                    <ul class="sp-plan-features">
+                        <li><i class="fas fa-check"></i> Full Ad Production</li>
+                        <li><i class="fas fa-check"></i> Narrative Storytelling</li>
+                        <li><i class="fas fa-check"></i> 4K High-End Export</li>
+                        <li><i class="fas fa-check"></i> Unlimited Revisions</li>
+                    </ul>
+                    <a href="contact.html?service=Video%20Editing" class="sp-btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7: Final CTA
+         ===================================================== -->
+    <section class="sp-final-cta">
+        <div class="container">
+            <div class="sp-cta-content sp-reveal">
+                <h2>Ready to Make Your Videos Unforgettable?</h2>
+                <p>
+                    Stop losing viewers. Let's create content that captivates from the first frame.
+                </p>
+                <a href="contact.html" class="sp-cta-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Start Your Video Project
+                </a>
+                <div class="sp-cta-reassurance">
+                    <div class="sp-reassurance-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free project consultation</span>
+                    </div>
+                    <div class="sp-reassurance-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>48-hour turnaround available</span>
+                    </div>
+                    <div class="sp-reassurance-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Satisfaction guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer style="margin-top: 5rem;">
         <div class="container">
             <div class="footer-content">
@@ -205,8 +517,7 @@
                         <span class="logo-cursor"></span>
                     </a>
                     <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
-                        exceptional
-                        design and data strategies.</p>
+                        exceptional design and data strategies.</p>
                     <ul class="social-links-new">
                         <li class="icon-content">
                             <a href="#" aria-label="X" data-social="x" class="social-link-new">
@@ -244,14 +555,14 @@
                         <li><a href="video-editing.html">Video Editing</a></li>
                         <li><a href="data-management.html">Data Management</a></li>
                         <li><a href="web-development.html">Full-Website Building</a></li>
-                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
+                        <li><a href="product-photography.html">Product Photography</a></li>
                         <li><a href="social-management.html">Social Media Management</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Company</h4>
                     <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -266,6 +577,7 @@
 
     <script src="script.js"></script>
     <script src="video-editing-bg.js"></script>
+    <script src="service-pages.js"></script>
 </body>
 
 </html>

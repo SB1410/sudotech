@@ -97,13 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggles = document.querySelectorAll('.theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Check for saved theme preference or default to dark (premium experience)
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    htmlElement.setAttribute('data-theme', savedTheme);
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
         updatePlasmaWaveTheme('dark');
-    } else {
-        updatePlasmaWaveTheme('light');
     }
 
     if (themeToggles.length > 0) {
@@ -605,5 +603,111 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         });
+    }
+    // =====================================================
+    // Problem/Solution Card 3D Tilt Effect
+    // =====================================================
+    const comparisonCards = document.querySelectorAll('.comparison-card');
+
+    if (comparisonCards.length > 0) {
+        comparisonCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Calculate center
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                // Get mouse position relative to center (-1 to 1)
+                const percentX = (x - centerX) / centerX;
+                const percentY = (y - centerY) / centerY;
+
+                // Calculate rotation (max 10 degrees)
+                const maxRotate = 10;
+                const rotateX = percentY * -maxRotate; // Mouse down -> rotate top towards (negative X)
+                const rotateY = percentX * maxRotate;  // Mouse right -> rotate right edge towards (positive Y)
+
+                // Apply transform
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                // Reset transform
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+    }
+
+    // =====================================================
+    // 3D Scroll Animation for Process & Problem/Solution
+    // =====================================================
+    const scrollContainer = document.getElementById('scroll-container-home');
+    const layerProcess = document.getElementById('scroll-layer-process');
+    const layerProblem = document.getElementById('scroll-layer-problem');
+
+    if (scrollContainer && layerProcess && layerProblem) {
+        // Initial Z positions
+        const processStartZ = 0;
+        const problemStartZ = -1500;
+        const animationDistance = 1500;
+
+        // Check if mobile
+        const isMobile = () => window.innerWidth <= 768;
+
+        // Reset styles for mobile
+        const resetMobileStyles = () => {
+            if (isMobile()) {
+                layerProcess.style.transform = 'none';
+                layerProcess.style.opacity = '1';
+                layerProblem.style.transform = 'none';
+                layerProblem.style.opacity = '1';
+            }
+        };
+
+        // Initial check
+        resetMobileStyles();
+
+        // Scroll handler using Intersection Observer relative scroll
+        const handleScroll = () => {
+            if (isMobile()) {
+                resetMobileStyles();
+                return;
+            }
+
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const containerHeight = scrollContainer.offsetHeight - window.innerHeight;
+
+            // Calculate scroll progress within this container
+            // When container top is at viewport top, progress = 0
+            // When container bottom is at viewport bottom, progress = 1
+            const scrolled = -containerRect.top;
+            const progress = Math.min(Math.max(scrolled / containerHeight, 0), 1);
+
+            const travelZ = progress * animationDistance;
+
+            // Process Layer: Moves from 0 to +1500 (flies towards viewer and fades out)
+            const processCurrentZ = processStartZ + travelZ;
+            let processOpacity = 1 - (progress * 3);
+            if (processOpacity < 0) processOpacity = 0;
+
+            layerProcess.style.transform = `translate(-50%, -50%) translateZ(${processCurrentZ}px)`;
+            layerProcess.style.opacity = processOpacity;
+
+            // Problem Layer: Moves from -1500 to 0 (comes into view)
+            const problemCurrentZ = problemStartZ + travelZ;
+            let problemOpacity = progress / 0.3;
+            if (problemOpacity > 1) problemOpacity = 1;
+
+            layerProblem.style.transform = `translate(-50%, -50%) translateZ(${problemCurrentZ}px)`;
+            layerProblem.style.opacity = problemOpacity;
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', resetMobileStyles);
+
+        // Initial call
+        handleScroll();
     }
 });

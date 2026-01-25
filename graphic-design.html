@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="SUDOtech Studio - Premium Graphic Design Services. Logo, UI/UX, and Social Media Graphics.">
-    <meta name="keywords" content="Graphic Design, Branding, UI/UX, Creative Agency">
+        content="SUDOtech Studio - Premium Graphic Design Services. Logo design, brand identity, UI/UX, and social media graphics that demand attention.">
+    <meta name="keywords"
+        content="Graphic Design, Branding, Logo Design, UI/UX Design, Social Media Graphics, Creative Agency">
     <meta name="author" content="SUDOtech Studio">
     <title>Graphic Design Services | SUDOtech Studio</title>
 
@@ -21,8 +22,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service-pages.css">
+
     <style>
-        /* Creative Design Background */
+        /* =====================================================
+           PRESERVED BACKGROUND - DO NOT MODIFY
+           ===================================================== */
         .design-page-bg {
             min-height: 100vh;
             background: linear-gradient(135deg, #0c0c1d 0%, #1a0a2e 30%, #2d1b4e 60%, #1a1a2e 100%);
@@ -30,7 +35,6 @@
             overflow: hidden;
         }
 
-        /* Animated Gradient Mesh Background */
         .gradient-mesh {
             position: fixed;
             top: 0;
@@ -41,7 +45,6 @@
             pointer-events: none;
         }
 
-        /* Morphing Color Blobs */
         .color-blob {
             position: absolute;
             border-radius: 50%;
@@ -110,7 +113,6 @@
             }
         }
 
-        /* Rotating Geometric Shapes */
         .geo-shape {
             position: absolute;
             border: 2px solid rgba(255, 255, 255, 0.1);
@@ -154,7 +156,6 @@
             }
         }
 
-        /* Color Palette Dots */
         .palette-dots {
             position: absolute;
             display: flex;
@@ -192,136 +193,13 @@
             }
         }
 
-        /* Content styling */
-        .design-page-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .design-page-bg h1,
-        .design-page-bg h3,
-        .design-page-bg h4 {
-            color: #ffffff;
-        }
-
-        .design-page-bg p,
-        .design-page-bg .back-link {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .design-page-bg header {
-            background: rgba(0, 0, 0, 0.9) !important;
-        }
-
-        .design-page-bg footer {
-            background: #0a0a0a;
-        }
-
-        .design-page-bg footer h4,
-        .design-page-bg footer p,
-        .design-page-bg footer a {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
-        }
-
-        .price-tag {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 1.5rem 0;
-        }
-
-        .price-tag span {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            margin-bottom: 0.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .pricing-features i {
-            color: var(--primary);
-        }
-
-        .pricing-card h3 {
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary) !important;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-
-        /* Light mode overrides */
+        /* Light mode overrides for background */
         html:not([data-theme="dark"]) .design-page-bg {
             background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 30%, #f3e5f5 60%, #fce4ec 100%);
         }
 
         html:not([data-theme="dark"]) .color-blob {
             opacity: 0.15;
-        }
-
-        html:not([data-theme="dark"]) .blob-1 {
-            background: linear-gradient(135deg, #ff006e, #8338ec);
-        }
-
-        html:not([data-theme="dark"]) .blob-2 {
-            background: linear-gradient(135deg, #00b4d8, #0077b6);
-        }
-
-        html:not([data-theme="dark"]) .blob-3 {
-            background: linear-gradient(135deg, #ffbe0b, #fb5607);
-        }
-
-        html:not([data-theme="dark"]) .blob-4 {
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
         }
 
         html:not([data-theme="dark"]) .geo-shape {
@@ -336,82 +214,33 @@
             opacity: 0.2;
         }
 
-        html:not([data-theme="dark"]) .design-page-bg h1,
-        html:not([data-theme="dark"]) .design-page-bg h3,
-        html:not([data-theme="dark"]) .design-page-bg h4 {
-            color: #1a202c;
+        /* Content zone */
+        .design-page-content {
+            position: relative;
+            z-index: 1;
         }
 
-        html:not([data-theme="dark"]) .design-page-bg p,
-        html:not([data-theme="dark"]) .design-page-bg .back-link {
-            color: #475569;
-        }
-
-        html:not([data-theme="dark"]) .design-page-bg footer {
-            background: #f8f9fa;
-        }
-
-        html:not([data-theme="dark"]) .design-page-bg footer h4,
-        html:not([data-theme="dark"]) .design-page-bg footer p,
-        html:not([data-theme="dark"]) .design-page-bg footer a {
-            color: #475569;
-        }
-
-        html:not([data-theme="dark"]) .pricing-card {
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(139, 92, 246, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        html:not([data-theme="dark"]) .pricing-card h3 {
-            color: #1a202c;
-        }
-
-        html:not([data-theme="dark"]) .price-tag {
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        /* Page-specific gradient */
+        .gd-gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f97316 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        html:not([data-theme="dark"]) .price-tag span {
-            color: #64748b;
-            -webkit-text-fill-color: #64748b;
-        }
-
-        html:not([data-theme="dark"]) .pricing-features li {
-            color: #475569;
-        }
-
-        html:not([data-theme="dark"]) .pricing-card:hover {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: #8b5cf6;
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        html:not([data-theme="dark"]) .pricing-card.featured {
-            border-color: #8b5cf6;
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.25);
         }
     </style>
 </head>
 
 <body>
     <div class="design-page-bg">
-        <!-- Animated Background Elements -->
+        <!-- PRESERVED BACKGROUND ELEMENTS -->
         <div class="gradient-mesh">
-            <!-- Morphing Color Blobs -->
             <div class="color-blob blob-1"></div>
             <div class="color-blob blob-2"></div>
             <div class="color-blob blob-3"></div>
             <div class="color-blob blob-4"></div>
-
-            <!-- Rotating Geometric Shapes -->
             <div class="geo-shape geo-1"></div>
             <div class="geo-shape geo-2"></div>
             <div class="geo-shape geo-3"></div>
-
-            <!-- Color Palette Dots -->
             <div class="palette-dots palette-1">
                 <div class="dot" style="background: #ff006e;"></div>
                 <div class="dot" style="background: #8338ec;"></div>
@@ -441,8 +270,7 @@
                         <a href="index.html#portfolio">Work</a>
                         <a href="about.html">About</a>
                         <a href="contact.html" class="btn btn-primary"
-                            style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get
-                            Started</a>
+                            style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get Started</a>
                         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                             <i class="fas fa-moon"></i>
                             <i class="fas fa-sun"></i>
@@ -459,70 +287,433 @@
             </div>
         </header>
 
-        <section class="design-page-content section-padding" style="padding-top: 10rem;">
+        <!-- =====================================================
+             SECTION 1: Hero
+             ===================================================== -->
+        <section class="sp-hero design-page-content">
             <div class="container">
-                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                <div class="sp-hero-content">
+                    <div class="sp-hero-badge">
+                        <i class="fas fa-palette"></i>
+                        <span>Trusted by 200+ Brands Worldwide</span>
+                    </div>
 
-                <div class="fade-in visible">
-                    <h1 class="text-gradient">Graphic Design Services</h1>
-                    <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem;">
-                        We elevate your brand with premium visual storytelling. From iconic logos to high-converting
-                        UI/UX
-                        designs, we blend creativity with strategy.
+                    <h1 class="gd-gradient">Design That Demands Attention</h1>
+
+                    <p class="sp-hero-subtitle">
+                        From iconic logos to high-converting UI, we craft visual identities that elevate brands
+                        and drive real business results.
+                    </p>
+
+                    <a href="contact.html" class="sp-hero-cta">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 2: Problems We Solve
+             ===================================================== -->
+        <section class="sp-section design-page-content">
+            <div class="container">
+                <div class="sp-section-header sp-reveal">
+                    <span class="sp-section-tag">The Challenge</span>
+                    <h2 class="sp-section-title">Blending In Costs You Business</h2>
+                    <p class="sp-section-subtitle">
+                        Generic visuals get ignored. Here's what's holding your brand back.
                     </p>
                 </div>
 
-                <div class="pricing-grid">
-                    <!-- Social Media -->
-                    <div class="pricing-card fade-in visible">
-                        <div class="service-icon"><i class="fas fa-hashtag"></i></div>
+                <div class="sp-problems-grid">
+                    <div class="sp-problem-card sp-reveal">
+                        <div class="sp-problem-icon">
+                            <i class="fas fa-eye-slash"></i>
+                        </div>
+                        <h3>Forgettable First Impressions</h3>
+                        <p>Your logo and branding don't stand out. Potential customers scroll past without a second
+                            glance.</p>
+                        <div class="sp-problem-solution">
+                            <i class="fas fa-check-circle"></i>
+                            <span>We create memorable visual identities</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-problem-card sp-reveal">
+                        <div class="sp-problem-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Inconsistent Brand Elements</h3>
+                        <p>Your social posts, website, and materials look like they're from different companies.</p>
+                        <div class="sp-problem-solution">
+                            <i class="fas fa-check-circle"></i>
+                            <span>We build cohesive design systems</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-problem-card sp-reveal">
+                        <div class="sp-problem-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>DIY Design Struggles</h3>
+                        <p>Hours wasted on Canva templates that never look quite professional enough.</p>
+                        <div class="sp-problem-solution">
+                            <i class="fas fa-check-circle"></i>
+                            <span>We deliver premium, ready-to-use assets</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-problem-card sp-reveal">
+                        <div class="sp-problem-icon">
+                            <i class="fas fa-chart-line-down"></i>
+                        </div>
+                        <h3>Low Conversion Rates</h3>
+                        <p>Your website looks dated. Users don't trust it enough to buy or sign up.</p>
+                        <div class="sp-problem-solution">
+                            <i class="fas fa-check-circle"></i>
+                            <span>We design for both beauty and conversions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 3: Services & Capabilities
+             ===================================================== -->
+        <section class="sp-section design-page-content">
+            <div class="container">
+                <div class="sp-section-header sp-reveal">
+                    <span class="sp-section-tag">What We Create</span>
+                    <h2 class="sp-section-title">Full-Spectrum Design Services</h2>
+                    <p class="sp-section-subtitle">
+                        Every visual touchpoint, expertly crafted.
+                    </p>
+                </div>
+
+                <div class="sp-services-grid">
+                    <div class="sp-service-card sp-reveal">
+                        <div class="sp-service-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3>Logo & Brand Identity</h3>
+                        <p>Iconic logos, color palettes, typography systems, and comprehensive brand guidelines
+                            that make your business unforgettable.</p>
+                        <div class="sp-service-tags">
+                            <span class="sp-service-tag">Logo Design</span>
+                            <span class="sp-service-tag">Brand Guide</span>
+                            <span class="sp-service-tag">Color Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-service-card sp-reveal">
+                        <div class="sp-service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Intuitive interfaces and seamless user experiences for web and mobile apps that
+                            convert visitors into loyal customers.</p>
+                        <div class="sp-service-tags">
+                            <span class="sp-service-tag">Wireframes</span>
+                            <span class="sp-service-tag">Prototypes</span>
+                            <span class="sp-service-tag">User Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-service-card sp-reveal">
+                        <div class="sp-service-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h3>Social Media Graphics</h3>
+                        <p>Scroll-stopping post designs, story templates, and carousel graphics optimized
+                            for engagement on every platform.</p>
+                        <div class="sp-service-tags">
+                            <span class="sp-service-tag">Posts</span>
+                            <span class="sp-service-tag">Stories</span>
+                            <span class="sp-service-tag">Carousels</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-service-card sp-reveal">
+                        <div class="sp-service-icon">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3>Print & Marketing</h3>
+                        <p>Business cards, brochures, packaging, and promotional materials that leave
+                            lasting impressions in the physical world.</p>
+                        <div class="sp-service-tags">
+                            <span class="sp-service-tag">Business Cards</span>
+                            <span class="sp-service-tag">Brochures</span>
+                            <span class="sp-service-tag">Packaging</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-service-card sp-reveal">
+                        <div class="sp-service-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>Illustrations & Icons</h3>
+                        <p>Custom illustrations and icon sets that add personality and visual clarity
+                            to your digital products and marketing.</p>
+                        <div class="sp-service-tags">
+                            <span class="sp-service-tag">Custom Icons</span>
+                            <span class="sp-service-tag">Illustrations</span>
+                            <span class="sp-service-tag">Infographics</span>
+                        </div>
+                    </div>
+
+                    <div class="sp-service-card sp-reveal">
+                        <div class="sp-service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Ad Creatives</h3>
+                        <p>High-performing ad designs for Facebook, Instagram, Google, and display networks
+                            that maximize your ROAS.</p>
+                        <div class="sp-service-tags">
+                            <span class="sp-service-tag">Social Ads</span>
+                            <span class="sp-service-tag">Display Ads</span>
+                            <span class="sp-service-tag">Retargeting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 4: Process Timeline
+             ===================================================== -->
+        <section class="sp-section design-page-content">
+            <div class="container">
+                <div class="sp-section-header sp-reveal">
+                    <span class="sp-section-tag">Our Process</span>
+                    <h2 class="sp-section-title">From Concept to Completion</h2>
+                    <p class="sp-section-subtitle">
+                        A proven creative workflow that delivers every time.
+                    </p>
+                </div>
+
+                <div class="sp-process-timeline">
+                    <div class="sp-process-step sp-reveal">
+                        <div class="sp-step-circle">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="sp-step-content">
+                            <h4>Discover</h4>
+                            <p>Deep dive into your brand, goals, and audience</p>
+                        </div>
+                    </div>
+
+                    <div class="sp-process-step sp-reveal">
+                        <div class="sp-step-circle">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="sp-step-content">
+                            <h4>Concept</h4>
+                            <p>Explore multiple creative directions</p>
+                        </div>
+                    </div>
+
+                    <div class="sp-process-step sp-reveal">
+                        <div class="sp-step-circle">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <div class="sp-step-content">
+                            <h4>Refine</h4>
+                            <p>Polish based on your feedback</p>
+                        </div>
+                    </div>
+
+                    <div class="sp-process-step sp-reveal">
+                        <div class="sp-step-circle">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                        <div class="sp-step-content">
+                            <h4>Deliver</h4>
+                            <p>Final files in all formats you need</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 5: Results & Proof
+             ===================================================== -->
+        <section class="sp-section design-page-content">
+            <div class="container">
+                <div class="sp-section-header sp-reveal">
+                    <span class="sp-section-tag">Our Track Record</span>
+                    <h2 class="sp-section-title">Results That Speak</h2>
+                    <p class="sp-section-subtitle">
+                        Numbers and words from brands we've transformed.
+                    </p>
+                </div>
+
+                <div class="sp-stats-grid">
+                    <div class="sp-stat-card sp-reveal">
+                        <div class="sp-stat-number" data-value="200" data-suffix="+">0+</div>
+                        <div class="sp-stat-label">Brands Designed</div>
+                    </div>
+                    <div class="sp-stat-card sp-reveal">
+                        <div class="sp-stat-number" data-value="98" data-suffix="%">0%</div>
+                        <div class="sp-stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="sp-stat-card sp-reveal">
+                        <div class="sp-stat-number" data-value="50" data-suffix="+">0+</div>
+                        <div class="sp-stat-label">Design Awards</div>
+                    </div>
+                    <div class="sp-stat-card sp-reveal">
+                        <div class="sp-stat-number" data-value="5" data-suffix=" Years">0 Years</div>
+                        <div class="sp-stat-label">Industry Experience</div>
+                    </div>
+                </div>
+
+                <div class="sp-testimonials">
+                    <div class="sp-testimonial-card sp-reveal">
+                        <p class="sp-testimonial-quote">
+                            SUDOtech completely transformed our brand. We went from forgettable to unforgettable.
+                            Sales increased 40% within the first quarter after launch.
+                        </p>
+                        <div class="sp-testimonial-author">
+                            <div class="sp-author-avatar">JM</div>
+                            <div class="sp-author-info">
+                                <h5>James Miller</h5>
+                                <p>Founder, Luxe Apparel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sp-testimonial-card sp-reveal">
+                        <p class="sp-testimonial-quote">
+                            The UI/UX work they did for our app was incredible. User retention doubled and
+                            our app store rating went from 3.2 to 4.8 stars.
+                        </p>
+                        <div class="sp-testimonial-author">
+                            <div class="sp-author-avatar">AK</div>
+                            <div class="sp-author-info">
+                                <h5>Anika Kapoor</h5>
+                                <p>CTO, HealthTrack</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 6: Pricing
+             ===================================================== -->
+        <section class="sp-section design-page-content">
+            <div class="container">
+                <div class="sp-section-header sp-reveal">
+                    <span class="sp-section-tag">Investment</span>
+                    <h2 class="sp-section-title">Packages That Fit Your Needs</h2>
+                    <p class="sp-section-subtitle">
+                        Transparent pricing. No surprises.
+                    </p>
+                </div>
+
+                <div class="sp-pricing-grid">
+                    <!-- Social Pack -->
+                    <div class="sp-pricing-card sp-reveal">
+                        <div class="sp-plan-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
                         <h3>Social Pack</h3>
-                        <div class="price-tag">$250 <span>/ month</span></div>
-                        <ul class="pricing-features">
+                        <p class="sp-plan-tagline">Monthly social media content</p>
+                        <div class="sp-plan-price">
+                            <span class="sp-price-amount">$250</span>
+                            <span class="sp-price-period">/ month</span>
+                        </div>
+                        <ul class="sp-plan-features">
                             <li><i class="fas fa-check"></i> 10 Custom Post Designs</li>
                             <li><i class="fas fa-check"></i> 5 Story Templates</li>
                             <li><i class="fas fa-check"></i> Platform Optimization</li>
                             <li><i class="fas fa-check"></i> 2 Rounds of Revisions</li>
                         </ul>
-                        <a href="contact.html?service=Graphic Design" class="btn btn-outline" style="width: 100%;">Get
-                            Started</a>
+                        <a href="contact.html?service=Graphic%20Design" class="sp-btn-outline">Get Started</a>
                     </div>
 
-                    <!-- Branding -->
-                    <div class="pricing-card featured fade-in visible">
-                        <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+                    <!-- Brand Identity - Featured -->
+                    <div class="sp-pricing-card featured sp-reveal">
+                        <div class="sp-plan-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
                         <h3>Brand Identity</h3>
-                        <div class="price-tag">$850 <span>/ project</span></div>
-                        <ul class="pricing-features">
+                        <p class="sp-plan-tagline">Complete visual identity system</p>
+                        <div class="sp-plan-price">
+                            <span class="sp-price-amount">$850</span>
+                            <span class="sp-price-period">/ project</span>
+                        </div>
+                        <ul class="sp-plan-features">
                             <li><i class="fas fa-check"></i> Primary & Secondary Logos</li>
                             <li><i class="fas fa-check"></i> Color Palette & Typography</li>
                             <li><i class="fas fa-check"></i> Brand Style Guide</li>
                             <li><i class="fas fa-check"></i> Business Card Design</li>
+                            <li><i class="fas fa-check"></i> Social Media Kit</li>
                         </ul>
-                        <a href="contact.html?service=Graphic Design" class="btn btn-primary"
-                            style="width: 100%;">Select Plan</a>
+                        <a href="contact.html?service=Graphic%20Design" class="sp-btn-primary">Select Plan</a>
                     </div>
 
-                    <!-- Web/UI Design -->
-                    <div class="pricing-card fade-in visible">
-                        <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                    <!-- UI/UX Design -->
+                    <div class="sp-pricing-card sp-reveal">
+                        <div class="sp-plan-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
                         <h3>UI/UX Design</h3>
-                        <div class="price-tag">$1,200 <span>/ project</span></div>
-                        <ul class="pricing-features">
+                        <p class="sp-plan-tagline">Web & app interface design</p>
+                        <div class="sp-plan-price">
+                            <span class="sp-price-amount">$1,200</span>
+                            <span class="sp-price-period">/ project</span>
+                        </div>
+                        <ul class="sp-plan-features">
                             <li><i class="fas fa-check"></i> High-Fidelity Wireframes</li>
                             <li><i class="fas fa-check"></i> Interactive Prototypes</li>
                             <li><i class="fas fa-check"></i> Responsive Web Design</li>
                             <li><i class="fas fa-check"></i> Source Files Included</li>
                         </ul>
-                        <a href="contact.html?service=Graphic Design" class="btn btn-outline" style="width: 100%;">Get
-                            Started</a>
+                        <a href="contact.html?service=Graphic%20Design" class="sp-btn-outline">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 7: Final CTA
+             ===================================================== -->
+        <section class="sp-final-cta design-page-content">
+            <div class="container">
+                <div class="sp-cta-content sp-reveal">
+                    <h2>Ready to Stand Out?</h2>
+                    <p>
+                        Let's create visuals that capture attention, build trust, and drive growth.
+                    </p>
+                    <a href="contact.html" class="sp-cta-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        Start Your Design Project
+                    </a>
+                    <div class="sp-cta-reassurance">
+                        <div class="sp-reassurance-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free initial consultation</span>
+                        </div>
+                        <div class="sp-reassurance-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Unlimited revisions included</span>
+                        </div>
+                        <div class="sp-reassurance-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% satisfaction guarantee</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <footer style="margin-top: 5rem;">
+    <!-- Footer -->
+    <footer style="margin-top: 0; background: #0a0a0a;">
         <div class="container">
             <div class="footer-content">
                 <div>
@@ -532,9 +723,9 @@
                         <span class="logo-tech">tech</span>
                         <span class="logo-cursor"></span>
                     </a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
-                        exceptional
-                        design and data strategies.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">Transforming ideas
+                        into digital reality through
+                        exceptional design and data strategies.</p>
                     <ul class="social-links-new">
                         <li class="icon-content">
                             <a href="#" aria-label="X" data-social="x" class="social-link-new">
@@ -566,23 +757,27 @@
                     </ul>
                 </div>
                 <div>
-                    <h4>Services</h4>
-                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
-                        <li><a href="graphic-design.html">Graphic Design</a></li>
-                        <li><a href="video-editing.html">Video Editing</a></li>
-                        <li><a href="data-management.html">Data Management</a></li>
-                        <li><a href="web-development.html">Full-Website Building</a></li>
-                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
-                        <li><a href="social-management.html">Social Media Management</a></li>
+                    <h4 style="color: rgba(255,255,255,0.9);">Services</h4>
+                    <ul style="margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><a href="graphic-design.html" style="color: rgba(255,255,255,0.7);">Graphic Design</a></li>
+                        <li><a href="video-editing.html" style="color: rgba(255,255,255,0.7);">Video Editing</a></li>
+                        <li><a href="data-management.html" style="color: rgba(255,255,255,0.7);">Data Management</a>
+                        </li>
+                        <li><a href="web-development.html" style="color: rgba(255,255,255,0.7);">Full-Website
+                                Building</a></li>
+                        <li><a href="product-photography.html" style="color: rgba(255,255,255,0.7);">Product
+                                Photography</a></li>
+                        <li><a href="social-management.html" style="color: rgba(255,255,255,0.7);">Social Media
+                                Management</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Company</h4>
-                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                    <h4 style="color: rgba(255,255,255,0.9);">Company</h4>
+                    <ul style="margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><a href="about.html" style="color: rgba(255,255,255,0.7);">About Us</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7);">Careers</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7);">Blog</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -593,6 +788,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="service-pages.js"></script>
 </body>
 
 </html>

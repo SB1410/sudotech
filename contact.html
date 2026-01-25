@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contact SUDOtech Studio - Get in touch for premium Graphic Design, Video Editing, and Data Management Services.">
-    <meta name="keywords" content="Contact, Graphic Design, Video Editing, Data Management, Creative Agency">
+        content="Contact SUDOtech Studio - Partner with us for premium Graphic Design, Video Editing, Web Development, and Data Management Services. Let's build something extraordinary together.">
+    <meta name="keywords"
+        content="Contact, Graphic Design, Video Editing, Data Management, Creative Agency, Web Development, Digital Partner">
     <meta name="author" content="SUDOtech Studio">
-    <title>Contact Us | SUDOtech Studio</title>
+    <title>Let's Connect | SUDOtech Studio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,159 +22,24 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Contact Page Specific Background */
-        .contact-page-bg {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Orange Accent Glow */
-        .contact-page-bg::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(249, 115, 22, 0.05) 40%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Floating Particles Effect */
-        .contact-page-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(251, 146, 60, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Override text colors for dark background */
-        .contact-page-bg h2,
-        .contact-page-bg h4 {
-            color: #ffffff;
-        }
-
-        .contact-page-bg p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-page-bg .contact-info-item i {
-            color: var(--primary) !important;
-        }
-
-        /* Form styling for dark background */
-        .contact-page-bg .input-field {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-        }
-
-        .contact-page-bg .input-field::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .contact-page-bg .input-field:focus {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .contact-page-bg select.input-field {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-page-bg select.input-field option {
-            background: #1a1a2e;
-            color: #ffffff;
-        }
-
-        /* Content positioning */
-        .contact-page-content {
-            position: relative;
-            z-index: 1;
-            padding-top: 100px;
-            padding-bottom: 60px;
-        }
-
-        /* Navbar adjustments for this page */
-        .contact-page-bg header {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        /* Enhanced Contact Info Cards */
-        .contact-page-bg .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-page-bg .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .contact-page-bg .contact-info-item:hover {
-            background: rgba(249, 115, 22, 0.1);
-            border-color: rgba(249, 115, 22, 0.3);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.15);
-        }
-
-        .contact-page-bg .contact-info-item i {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(251, 146, 60, 0.1) 100%);
-            border-radius: 12px;
-            font-size: 1.5rem;
-            color: var(--primary) !important;
-            transition: all 0.3s ease;
-        }
-
-        .contact-page-bg .contact-info-item:hover i {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: #ffffff !important;
-            transform: scale(1.1);
-        }
-
-        .contact-page-bg .contact-info-item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-page-bg .contact-info-item p {
-            font-size: 0.95rem;
-            opacity: 0.85;
-        }
-    </style>
+    <link rel="stylesheet" href="contact-page.css">
 </head>
 
 <body>
-    <div class="contact-page-bg">
+    <div class="contact-page">
+        <!-- Animated Background Mesh -->
+        <div class="contact-bg-mesh"></div>
+
+        <!-- Floating Particles -->
+        <div class="contact-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
         <!-- Navigation -->
         <header>
             <div class="container">
@@ -208,70 +74,232 @@
             </div>
         </header>
 
-        <!-- Contact Section -->
-        <section class="contact-page-content section-padding">
+        <!-- Hero Introduction Section -->
+        <section class="contact-hero">
             <div class="container">
-                <div class="text-center fade-in">
-                    <h2>Get In Touch</h2>
-                    <p>Ready to start your next project? Drop us a message.</p>
-                </div>
-
-                <div class="contact-container fade-in">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <i class="fas fa-envelope" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p style="margin:0;">hello@sudotech.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-phone" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p style="margin:0;">+1 (555) 123-4567</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-map-marker-alt" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Visit Us</h4>
-                                <p style="margin:0;">101 Creative Blvd, Design City</p>
-                            </div>
-                        </div>
+                <div class="contact-hero-content reveal">
+                    <div class="contact-hero-badge">
+                        <i class="fas fa-handshake"></i>
+                        <span>Your Digital Partner</span>
                     </div>
-
-                    <form class="contact-form">
-                        <div class="input-group">
-                            <input type="text" class="input-field" placeholder="Your Name" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" class="input-field" placeholder="Your Email" required>
-                        </div>
-                        <div class="input-group">
-                            <select class="input-field" id="service-select">
-                                <option value="">Select Service</option>
-                                <option value="Graphic Design">Graphic Design</option>
-                                <option value="Video Editing">Video Editing</option>
-                                <option value="Data Management">Data Management</option>
-                                <option value="Full-Website Building">Full-Website Building</option>
-                                <option value="Product Photography & Marketing">Product Photography & Marketing</option>
-                                <option value="Social Media Management">Social Media Management</option>
-                            </select>
-                        </div>
-                        <div class="input-group" id="plan-group" style="display: none;">
-                            <select class="input-field" id="plan-select">
-                                <option value="">Select Plan</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <textarea class="input-field" placeholder="Tell us about your project"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
+                    <h1>Let's Build Something <span class="highlight">Extraordinary</span></h1>
+                    <p class="contact-hero-subtitle">
+                        Ready to transform your digital presence? We're here to listen, understand, and deliver
+                        solutions that exceed your expectations.
+                    </p>
                 </div>
             </div>
         </section>
+
+        <!-- Main Contact Interface -->
+        <section class="contact-main">
+            <div class="container">
+                <div class="contact-interface">
+                    <!-- Info Panel -->
+                    <div class="contact-info-panel reveal reveal-delay-1">
+                        <h3 class="info-panel-title">Get in Touch</h3>
+                        <p class="info-panel-subtitle">Choose how you'd like to connect with us</p>
+
+                        <div class="contact-info-list">
+                            <a href="mailto:hello@sudotech.com" class="contact-info-card">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>Email Us</h4>
+                                    <p>hello@sudotech.com</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+15551234567" class="contact-info-card">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>Call Us</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/15551234567" target="_blank" class="contact-info-card">
+                                <div class="contact-info-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>WhatsApp</h4>
+                                    <p>Quick Response Chat</p>
+                                </div>
+                            </a>
+
+                            <div class="contact-info-card">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>Business Hours</h4>
+                                    <p>Mon - Fri: 9am - 6pm IST</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="info-social-links">
+                            <a href="#" class="info-social-link" aria-label="Twitter/X">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="info-social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="info-social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="info-social-link" aria-label="Dribbble">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-card reveal reveal-delay-2">
+                        <div class="form-header">
+                            <h3>Send Us a Message</h3>
+                            <p>Fill out the form and we'll get back to you within 24 hours</p>
+                        </div>
+
+                        <form id="contact-form" class="contact-form-new" novalidate>
+                            <div class="form-row">
+                                <div class="floating-input-group">
+                                    <input type="text" id="name" name="name" class="floating-input"
+                                        placeholder="Your Name" required>
+                                    <label for="name" class="floating-label">Your Name</label>
+                                </div>
+
+                                <div class="floating-input-group">
+                                    <input type="email" id="email" name="email" class="floating-input"
+                                        placeholder="Email Address" required>
+                                    <label for="email" class="floating-label">Email Address</label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="floating-input-group">
+                                    <input type="tel" id="phone" name="phone" class="floating-input"
+                                        placeholder="Phone (Optional)">
+                                    <label for="phone" class="floating-label">Phone (Optional)</label>
+                                </div>
+
+                                <div class="floating-input-group">
+                                    <select id="service-select" name="service" class="floating-input" required>
+                                        <option value="" disabled selected>Select a Service</option>
+                                        <option value="Graphic Design">Graphic Design</option>
+                                        <option value="Video Editing">Video Editing</option>
+                                        <option value="Data Management">Data Management</option>
+                                        <option value="Full-Website Building">Full-Website Building</option>
+                                        <option value="Product Photography & Marketing">Product Photography & Marketing
+                                        </option>
+                                        <option value="Social Media Management">Social Media Management</option>
+                                        <option value="Other">Other / Multiple Services</option>
+                                    </select>
+                                    <label for="service-select" class="floating-label">Service Interested In</label>
+                                </div>
+                            </div>
+
+                            <div class="floating-input-group" id="plan-group" style="display: none;">
+                                <select id="plan-select" name="plan" class="floating-input">
+                                    <option value="">Select Plan</option>
+                                </select>
+                                <label for="plan-select" class="floating-label">Select Plan</label>
+                            </div>
+
+                            <div class="floating-input-group textarea-group">
+                                <textarea id="message" name="message" class="floating-input" placeholder="Your Message"
+                                    rows="4" required></textarea>
+                                <label for="message" class="floating-label">Tell us about your project</label>
+                            </div>
+
+                            <button type="submit" class="contact-submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fas fa-paper-plane btn-icon"></i>
+                                <span class="spinner"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Credibility Section -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-card reveal reveal-delay-1">
+                        <div class="trust-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>24hr Response</h4>
+                        <p>We respond to all inquiries within one business day</p>
+                    </div>
+
+                    <div class="trust-card reveal reveal-delay-2">
+                        <div class="trust-icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h4>100% Secure</h4>
+                        <p>Your data is protected with enterprise-grade security</p>
+                    </div>
+
+                    <div class="trust-card reveal reveal-delay-3">
+                        <div class="trust-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>5+ Years</h4>
+                        <p>Industry experience delivering premium solutions</p>
+                    </div>
+
+                    <div class="trust-card reveal reveal-delay-4">
+                        <div class="trust-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>250+ Projects</h4>
+                        <p>Successfully completed for clients worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing CTA Section -->
+        <section class="contact-cta-section">
+            <div class="container">
+                <div class="cta-banner reveal">
+                    <div class="cta-content">
+                        <h3>Not ready to commit? Let's just talk.</h3>
+                        <p>Schedule a free 15-minute discovery call to explore how we can help your business grow.</p>
+                        <a href="mailto:hello@sudotech.com?subject=Discovery%20Call%20Request" class="btn btn-primary">
+                            Schedule a Call <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                        </a>
+                        <div class="cta-privacy">
+                            <i class="fas fa-lock"></i>
+                            <span>Your information is never shared with third parties</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="contact-success-modal" id="success-modal">
+        <div class="success-modal-content">
+            <div class="success-checkmark">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+            <button class="success-close-btn" id="close-success-modal">Got it!</button>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -336,7 +364,7 @@
                 <div>
                     <h4 style="color: #fff;">Company</h4>
                     <ul style="margin-top: 1rem; color: rgba(255,255,255,0.6); line-height: 2;">
-                        <li><a href="#" style="color: rgba(255,255,255,0.6);">About Us</a></li>
+                        <li><a href="about.html" style="color: rgba(255,255,255,0.6);">About Us</a></li>
                         <li><a href="#" style="color: rgba(255,255,255,0.6);">Careers</a></li>
                         <li><a href="#" style="color: rgba(255,255,255,0.6);">Blog</a></li>
                         <li><a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a></li>
@@ -352,95 +380,239 @@
     <!-- Scripts -->
     <script src="script.js"></script>
     <script>
-        // Service plans data
-        const servicePlans = {
-            'Graphic Design': [
-                { name: 'Starter - $299', value: 'Starter ($299) - Logo + Brand Guide' },
-                { name: 'Professional - $799', value: 'Professional ($799) - Full Brand Package' },
-                { name: 'Enterprise - Custom', value: 'Enterprise (Custom) - Complete Rebrand' }
-            ],
-            'Video Editing': [
-                { name: 'Basic - $199', value: 'Basic ($199) - Short Form Video' },
-                { name: 'Standard - $499', value: 'Standard ($499) - Full Production' },
-                { name: 'Premium - $999+', value: 'Premium ($999+) - Commercial Grade' }
-            ],
-            'Data Management': [
-                { name: 'Starter - $149/mo', value: 'Starter ($149/mo) - Basic Analytics' },
-                { name: 'Business - $399/mo', value: 'Business ($399/mo) - Full Dashboard' },
-                { name: 'Enterprise - Custom', value: 'Enterprise (Custom) - Custom Solution' }
-            ],
-            'Full-Website Building': [
-                { name: 'Landing Page - $499', value: 'Landing Page ($499) - Single Page' },
-                { name: 'Business Site - $1,499', value: 'Business Site ($1,499) - Multi-page' },
-                { name: 'E-Commerce - $2,999+', value: 'E-Commerce ($2,999+) - Full Store' }
-            ],
-            'Product Photography & Marketing': [
-                { name: 'Starter - $299', value: 'Starter ($299) - Basic Shoot' },
-                { name: 'Professional - $799', value: 'Professional ($799) - Full Campaign' },
-                { name: 'Enterprise - Custom', value: 'Enterprise (Custom) - Full Marketing Suite' }
-            ],
-            'Social Media Management': [
-                { name: 'Starter - $299/mo', value: 'Starter ($299/mo) - 2 Platforms' },
-                { name: 'Growth - $599/mo', value: 'Growth ($599/mo) - 4 Platforms' },
-                { name: 'Scale - $999/mo', value: 'Scale ($999/mo) - Full Management' }
-            ]
-        };
+        // ============================================
+        // CONTACT PAGE SPECIFIC SCRIPTS
+        // ============================================
 
-        // Handle service selection change
-        const serviceSelect = document.getElementById('service-select');
-        const planGroup = document.getElementById('plan-group');
-        const planSelect = document.getElementById('plan-select');
-
-        function updatePlans(serviceName) {
-            // Clear existing options
-            planSelect.innerHTML = '<option value="">Select Plan</option>';
-
-            if (serviceName && servicePlans[serviceName]) {
-                // Populate with new options
-                servicePlans[serviceName].forEach(plan => {
-                    const option = document.createElement('option');
-                    option.value = plan.value;
-                    option.textContent = plan.name;
-                    planSelect.appendChild(option);
-                });
-
-                // Show the plan dropdown with animation
-                planGroup.style.display = 'block';
-                planSelect.style.color = 'rgba(255, 255, 255, 0.7)';
-            } else {
-                // Hide plan dropdown
-                planGroup.style.display = 'none';
-            }
-        }
-
-        serviceSelect.addEventListener('change', function () {
-            updatePlans(this.value);
-            if (this.value) {
-                this.style.color = '#ffffff';
-            }
-        });
-
-        // Pre-select service from URL parameter
         document.addEventListener('DOMContentLoaded', function () {
+            // Service plans data
+            const servicePlans = {
+                'Graphic Design': [
+                    { name: 'Starter - $299', value: 'Starter ($299) - Logo + Brand Guide' },
+                    { name: 'Professional - $799', value: 'Professional ($799) - Full Brand Package' },
+                    { name: 'Enterprise - Custom', value: 'Enterprise (Custom) - Complete Rebrand' }
+                ],
+                'Video Editing': [
+                    { name: 'Basic - $199', value: 'Basic ($199) - Short Form Video' },
+                    { name: 'Standard - $499', value: 'Standard ($499) - Full Production' },
+                    { name: 'Premium - $999+', value: 'Premium ($999+) - Commercial Grade' }
+                ],
+                'Data Management': [
+                    { name: 'Starter - $149/mo', value: 'Starter ($149/mo) - Basic Analytics' },
+                    { name: 'Business - $399/mo', value: 'Business ($399/mo) - Full Dashboard' },
+                    { name: 'Enterprise - Custom', value: 'Enterprise (Custom) - Custom Solution' }
+                ],
+                'Full-Website Building': [
+                    { name: 'Landing Page - $499', value: 'Landing Page ($499) - Single Page' },
+                    { name: 'Business Site - $1,499', value: 'Business Site ($1,499) - Multi-page' },
+                    { name: 'E-Commerce - $2,999+', value: 'E-Commerce ($2,999+) - Full Store' }
+                ],
+                'Product Photography & Marketing': [
+                    { name: 'Starter - $299', value: 'Starter ($299) - Basic Shoot' },
+                    { name: 'Professional - $799', value: 'Professional ($799) - Full Campaign' },
+                    { name: 'Enterprise - Custom', value: 'Enterprise (Custom) - Full Marketing Suite' }
+                ],
+                'Social Media Management': [
+                    { name: 'Starter - $299/mo', value: 'Starter ($299/mo) - 2 Platforms' },
+                    { name: 'Growth - $599/mo', value: 'Growth ($599/mo) - 4 Platforms' },
+                    { name: 'Scale - $999/mo', value: 'Scale ($999/mo) - Full Management' }
+                ]
+            };
+
+            // Handle service selection change
+            const serviceSelect = document.getElementById('service-select');
+            const planGroup = document.getElementById('plan-group');
+            const planSelect = document.getElementById('plan-select');
+
+            function updatePlans(serviceName) {
+                planSelect.innerHTML = '<option value="">Select Plan</option>';
+
+                if (serviceName && servicePlans[serviceName]) {
+                    servicePlans[serviceName].forEach(plan => {
+                        const option = document.createElement('option');
+                        option.value = plan.value;
+                        option.textContent = plan.name;
+                        planSelect.appendChild(option);
+                    });
+                    planGroup.style.display = 'block';
+                } else {
+                    planGroup.style.display = 'none';
+                }
+            }
+
+            if (serviceSelect) {
+                serviceSelect.addEventListener('change', function () {
+                    updatePlans(this.value);
+                });
+            }
+
+            // Pre-select service from URL parameter
             const urlParams = new URLSearchParams(window.location.search);
             const service = urlParams.get('service');
 
-            if (service) {
-                const selectElement = document.getElementById('service-select');
-                if (selectElement) {
-                    // Find and select the matching option
-                    for (let option of selectElement.options) {
-                        if (option.value.toLowerCase() === service.toLowerCase() ||
-                            option.value.toLowerCase().includes(service.toLowerCase())) {
-                            option.selected = true;
-                            selectElement.style.color = '#ffffff';
-                            // Also update plans for pre-selected service
-                            updatePlans(option.value);
-                            break;
-                        }
+            if (service && serviceSelect) {
+                for (let option of serviceSelect.options) {
+                    if (option.value.toLowerCase() === service.toLowerCase() ||
+                        option.value.toLowerCase().includes(service.toLowerCase())) {
+                        option.selected = true;
+                        updatePlans(option.value);
+                        break;
                     }
                 }
             }
+
+            // ============================================
+            // SCROLL REVEAL ANIMATIONS
+            // ============================================
+
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // ============================================
+            // FORM VALIDATION & SUBMISSION
+            // ============================================
+
+            const contactForm = document.getElementById('contact-form');
+            const successModal = document.getElementById('success-modal');
+            const closeModalBtn = document.getElementById('close-success-modal');
+
+            // Real-time email validation
+            const emailInput = document.getElementById('email');
+            if (emailInput) {
+                emailInput.addEventListener('blur', function () {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (this.value && !emailRegex.test(this.value)) {
+                        this.classList.add('invalid');
+                        this.classList.remove('valid');
+                    } else if (this.value) {
+                        this.classList.add('valid');
+                        this.classList.remove('invalid');
+                    }
+                });
+            }
+
+            // Form submission with validation
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Get form fields
+                    const nameInput = document.getElementById('name');
+                    const emailInput = document.getElementById('email');
+                    const serviceSelect = document.getElementById('service-select');
+                    const planSelect = document.getElementById('plan-select');
+                    const planGroup = document.getElementById('plan-group');
+
+                    let isValid = true;
+
+                    // Reset validation states
+                    [nameInput, emailInput, serviceSelect, planSelect].forEach(input => {
+                        if (input) {
+                            input.classList.remove('invalid', 'valid');
+                        }
+                    });
+
+                    // Validate Name
+                    if (!nameInput.value.trim()) {
+                        nameInput.classList.add('invalid');
+                        isValid = false;
+                    } else {
+                        nameInput.classList.add('valid');
+                    }
+
+                    // Validate Email
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+                        emailInput.classList.add('invalid');
+                        isValid = false;
+                    } else {
+                        emailInput.classList.add('valid');
+                    }
+
+                    // Validate Service Selection
+                    if (!serviceSelect.value) {
+                        serviceSelect.classList.add('invalid');
+                        isValid = false;
+                    } else {
+                        serviceSelect.classList.add('valid');
+                    }
+
+                    // Validate Plan Selection (only if plan dropdown is visible)
+                    if (planGroup.style.display !== 'none' && !planSelect.value) {
+                        planSelect.classList.add('invalid');
+                        isValid = false;
+                    } else if (planGroup.style.display !== 'none') {
+                        planSelect.classList.add('valid');
+                    }
+
+                    // If validation fails, stop here
+                    if (!isValid) {
+                        // Scroll to first invalid field
+                        const firstInvalid = contactForm.querySelector('.invalid');
+                        if (firstInvalid) {
+                            firstInvalid.focus();
+                        }
+                        return;
+                    }
+
+                    const submitBtn = contactForm.querySelector('.contact-submit-btn');
+
+                    // Add loading state
+                    submitBtn.classList.add('loading');
+
+                    // Simulate form submission (replace with actual API call)
+                    setTimeout(() => {
+                        submitBtn.classList.remove('loading');
+
+                        // Show success modal
+                        successModal.classList.add('active');
+
+                        // Reset form
+                        contactForm.reset();
+                        document.getElementById('plan-group').style.display = 'none';
+
+                        // Remove validation classes
+                        contactForm.querySelectorAll('.floating-input').forEach(input => {
+                            input.classList.remove('valid', 'invalid');
+                        });
+                    }, 1500);
+                });
+            }
+
+            // Close success modal
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function () {
+                    successModal.classList.remove('active');
+                });
+            }
+
+            // Close modal on overlay click
+            if (successModal) {
+                successModal.addEventListener('click', function (e) {
+                    if (e.target === successModal) {
+                        successModal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && successModal.classList.contains('active')) {
+                    successModal.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>

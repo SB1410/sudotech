@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="SUDOtech Studio - Expert Social Media Management. Build your tribe with strategic content and engagement.">
-    <meta name="keywords" content="Social Media Marketing, Content Strategy, Community Management, Analytics, SUDOtech">
+        content="SUDOtech Studio - Expert Social Media Management. Scale your reach, dominate conversations, and build a loyal community with data-driven strategies.">
+    <meta name="keywords"
+        content="Social Media Marketing, Content Strategy, Community Management, Analytics, Brand Growth, Engagement, SUDOtech">
     <meta name="author" content="SUDOtech Studio">
     <title>Social Media Management | SUDOtech Studio</title>
 
@@ -21,85 +22,11 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            background: rgba(30, 41, 59, 0.9);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .pricing-card h3 {
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .price-tag {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 1.5rem 0;
-        }
-
-        .price-tag span {
-            font-size: 1rem;
-            color: #ffffff;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            margin-bottom: 0.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .pricing-features i {
-            color: var(--primary);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="social-management.css">
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Navigation (Unchanged) -->
     <header>
         <div class="container">
             <nav>
@@ -133,67 +60,526 @@
         </div>
     </header>
 
-    <!-- Fixed Plasma Wave Background - Covers entire website -->
-    <canvas id="plasma-wave-canvas" class="fixed-website-bg"></canvas>
+    <!-- Animated Background Canvas -->
+    <canvas id="social-bg-canvas" class="social-bg-canvas"></canvas>
 
-    <section class="section-padding" style="padding-top: 10rem;">
+    <!-- =====================================================
+         Section 1: Hero Growth
+         ===================================================== -->
+    <section class="smm-hero">
+        <!-- Floating Platform Icons -->
+        <div class="smm-floating-icons">
+            <i class="fab fa-instagram smm-platform-icon instagram"></i>
+            <i class="fab fa-linkedin-in smm-platform-icon linkedin"></i>
+            <i class="fab fa-x-twitter smm-platform-icon twitter"></i>
+            <i class="fab fa-youtube smm-platform-icon youtube"></i>
+            <i class="fab fa-tiktok smm-platform-icon tiktok"></i>
+            <i class="fab fa-facebook-f smm-platform-icon facebook"></i>
+        </div>
+
         <div class="container">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="smm-hero-content">
+                <div class="smm-hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Trusted by 500+ Growing Brands</span>
+                </div>
 
-            <div class="fade-in visible">
-                <h1 class="text-gradient">Social Management</h1>
-                <p style="font-size: 1.25rem; max-width: 700px; margin-top: 1.5rem; color: var(--text-light);">
-                    Strategic content, community growth, and engagement analytics. We build your digital tribe and
-                    ensure your brand stays relevant.
+                <h1>Scale Your Social Presence.<br>Dominate Conversations.</h1>
+
+                <p class="smm-hero-subtitle">
+                    Transform your social channels into powerful growth engines. We blend creative storytelling with
+                    data-driven strategies to build engaged communities that convert.
                 </p>
-            </div>
 
-            <div class="pricing-grid">
-                <!-- Starter -->
-                <div class="pricing-card fade-in visible">
-                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Starter</h3>
-                    <div class="price-tag">$299 <span>/ month</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 2 Social Platforms</li>
-                        <li><i class="fas fa-check"></i> 8 Posts per Month</li>
-                        <li><i class="fas fa-check"></i> Basic Engagement</li>
-                        <li><i class="fas fa-check"></i> Monthly Analytics</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
-                </div>
-
-                <!-- Growth -->
-                <div class="pricing-card featured fade-in visible">
-                    <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3>Growth</h3>
-                    <div class="price-tag">$599 <span>/ month</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 4 Social Platforms</li>
-                        <li><i class="fas fa-check"></i> 15 Posts per Month</li>
-                        <li><i class="fas fa-check"></i> Community Management</li>
-                        <li><i class="fas fa-check"></i> Ad Campaign Support</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-primary" style="width: 100%;">Select Plan</a>
-                </div>
-
-                <!-- Scale -->
-                <div class="pricing-card fade-in visible">
-                    <div class="service-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Scale</h3>
-                    <div class="price-tag">$999 <span>/ month</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> All Major Platforms</li>
-                        <li><i class="fas fa-check"></i> Daily Posting Strategy</li>
-                        <li><i class="fas fa-check"></i> Full Content Creation</li>
-                        <li><i class="fas fa-check"></i> 24/7 Engagement</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                <div class="smm-hero-ctas">
+                    <a href="contact.html" class="smm-btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Strategy Call
+                    </a>
+                    <button class="smm-btn-outline" data-popup-trigger>
+                        <i class="fas fa-chart-line"></i>
+                        Get Free Audit
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- =====================================================
+         Section 2: Problems We Solve
+         ===================================================== -->
+    <section class="smm-problems">
+        <div class="container">
+            <div class="smm-section-header smm-reveal">
+                <span class="smm-section-tag">The Reality Check</span>
+                <h2 class="smm-section-title">Struggling to Get Seen?</h2>
+                <p class="smm-section-subtitle">
+                    These challenges are more common than you think. Here's what we fix.
+                </p>
+            </div>
+
+            <div class="smm-problems-grid">
+                <!-- Problem 1 -->
+                <div class="smm-problem-card">
+                    <div class="smm-problem-icon">
+                        <i class="fas fa-chart-line-down"></i>
+                    </div>
+                    <h3>Engagement is Dying</h3>
+                    <p>Your posts get buried in the algorithm. Likes and comments have flatlined despite consistent
+                        posting.</p>
+                    <div class="smm-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We engineer content that algorithms amplify</span>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="smm-problem-card">
+                    <div class="smm-problem-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>Invisible to Your Audience</h3>
+                    <p>Your ideal customers don't know you exist. Reach has crashed and organic growth feels
+                        impossible.</p>
+                    <div class="smm-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We put your brand in front of the right eyes</span>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="smm-problem-card">
+                    <div class="smm-problem-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Inconsistent Brand Voice</h3>
+                    <p>Your content looks scattered. No clear theme, no recognizable style, no memorable identity.</p>
+                    <div class="smm-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We craft a cohesive brand narrative</span>
+                    </div>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="smm-problem-card">
+                    <div class="smm-problem-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>No Time for Social</h3>
+                    <p>You're too busy running your business to stay active on 5+ platforms. Content planning takes
+                        forever.</p>
+                    <div class="smm-problem-solution">
+                        <i class="fas fa-check-circle"></i>
+                        <span>We handle everything so you focus on growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Section 3: Services & Capabilities
+         ===================================================== -->
+    <section class="smm-services">
+        <div class="container">
+            <div class="smm-section-header smm-reveal">
+                <span class="smm-section-tag">What We Do</span>
+                <h2 class="smm-section-title">Full-Stack Social Management</h2>
+                <p class="smm-section-subtitle">
+                    From strategy to execution, we cover every aspect of your social media presence.
+                </p>
+            </div>
+
+            <div class="smm-services-grid">
+                <!-- Service 1 -->
+                <div class="smm-service-card">
+                    <div class="smm-service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Scroll-stopping graphics, viral reels, compelling stories, and carousel posts designed for each
+                        platform's unique audience.</p>
+                    <div class="smm-service-features">
+                        <span class="smm-service-feature">Graphics</span>
+                        <span class="smm-service-feature">Reels</span>
+                        <span class="smm-service-feature">Stories</span>
+                        <span class="smm-service-feature">Carousels</span>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="smm-service-card">
+                    <div class="smm-service-icon">
+                        <i class="fas fa-calendar-days"></i>
+                    </div>
+                    <h3>Scheduling & Publishing</h3>
+                    <p>Strategic content calendars with optimal posting times. Never miss a beat with automated
+                        scheduling across all platforms.</p>
+                    <div class="smm-service-features">
+                        <span class="smm-service-feature">Content Calendar</span>
+                        <span class="smm-service-feature">Auto-Posting</span>
+                        <span class="smm-service-feature">Peak Times</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="smm-service-card">
+                    <div class="smm-service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Community Management</h3>
+                    <p>Active engagement with your audience—responding to comments, DMs, and fostering genuine
+                        relationships that build loyalty.</p>
+                    <div class="smm-service-features">
+                        <span class="smm-service-feature">DM Response</span>
+                        <span class="smm-service-feature">Comments</span>
+                        <span class="smm-service-feature">Engagement</span>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="smm-service-card">
+                    <div class="smm-service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Deep-dive insights into what's working. Monthly reports with actionable recommendations to
+                        continuously improve ROI.</p>
+                    <div class="smm-service-features">
+                        <span class="smm-service-feature">ROI Tracking</span>
+                        <span class="smm-service-feature">Insights</span>
+                        <span class="smm-service-feature">Monthly Reports</span>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="smm-service-card">
+                    <div class="smm-service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Paid Ads Management</h3>
+                    <p>Strategic ad campaigns that amplify your reach. We handle targeting, creative, and optimization
+                        for maximum ROAS.</p>
+                    <div class="smm-service-features">
+                        <span class="smm-service-feature">Facebook Ads</span>
+                        <span class="smm-service-feature">Instagram Ads</span>
+                        <span class="smm-service-feature">Retargeting</span>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="smm-service-card">
+                    <div class="smm-service-icon">
+                        <i class="fas fa-microphone-lines"></i>
+                    </div>
+                    <h3>Brand Voice Development</h3>
+                    <p>Craft a distinctive tone that resonates with your audience. Consistent messaging that builds
+                        trust and recognition.</p>
+                    <div class="smm-service-features">
+                        <span class="smm-service-feature">Tone Guide</span>
+                        <span class="smm-service-feature">Messaging</span>
+                        <span class="smm-service-feature">Personality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Section 4: Process & Workflow
+         ===================================================== -->
+    <section class="smm-process">
+        <div class="container">
+            <div class="smm-section-header smm-reveal">
+                <span class="smm-section-tag">Our Process</span>
+                <h2 class="smm-section-title">From Strategy to Scale</h2>
+                <p class="smm-section-subtitle">
+                    A proven 5-step framework that delivers consistent growth.
+                </p>
+            </div>
+
+            <div class="smm-process-timeline">
+                <!-- Step 1 -->
+                <div class="smm-process-step">
+                    <div class="smm-step-number">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <div class="smm-step-content">
+                        <h4>Strategy</h4>
+                        <p>Deep-dive audit & custom roadmap</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="smm-process-step">
+                    <div class="smm-step-number">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="smm-step-content">
+                        <h4>Create</h4>
+                        <p>Content that captivates & converts</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="smm-process-step">
+                    <div class="smm-step-number">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="smm-step-content">
+                        <h4>Publish</h4>
+                        <p>Strategic timing across platforms</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="smm-process-step">
+                    <div class="smm-step-number">
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="smm-step-content">
+                        <h4>Optimize</h4>
+                        <p>Data-driven refinements weekly</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="smm-process-step">
+                    <div class="smm-step-number">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="smm-step-content">
+                        <h4>Scale</h4>
+                        <p>Amplify what works, grow faster</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Section 5: Results & Proof
+         ===================================================== -->
+    <section class="smm-results">
+        <div class="container">
+            <div class="smm-section-header smm-reveal">
+                <span class="smm-section-tag">The Results</span>
+                <h2 class="smm-section-title">Numbers That Speak</h2>
+                <p class="smm-section-subtitle">
+                    Real outcomes for real brands. Here's what our clients have achieved.
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="smm-stats-grid">
+                <div class="smm-stat-card">
+                    <div class="smm-stat-number" data-value="500" data-suffix="+">0+</div>
+                    <div class="smm-stat-label">Brands Scaled</div>
+                </div>
+                <div class="smm-stat-card">
+                    <div class="smm-stat-number" data-value="10" data-suffix="M+">0M+</div>
+                    <div class="smm-stat-label">Total Reach Generated</div>
+                </div>
+                <div class="smm-stat-card">
+                    <div class="smm-stat-number" data-value="85" data-suffix="%">0%</div>
+                    <div class="smm-stat-label">Avg. Engagement Boost</div>
+                </div>
+                <div class="smm-stat-card">
+                    <div class="smm-stat-number" data-value="3" data-suffix="x">0x</div>
+                    <div class="smm-stat-label">Follower Growth Rate</div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="smm-testimonials">
+                <div class="smm-testimonial-card">
+                    <p class="smm-testimonial-quote">
+                        Our engagement tripled in 3 months. SUDOtech didn't just grow our followers—they built a
+                        community that actually buys.
+                    </p>
+                    <div class="smm-testimonial-author">
+                        <div class="smm-author-avatar">SK</div>
+                        <div class="smm-author-info">
+                            <h5>Sarah Kim</h5>
+                            <p>Founder, Bloom Beauty Co.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="smm-testimonial-card">
+                    <p class="smm-testimonial-quote">
+                        Finally, a team that gets B2B social. Our LinkedIn went from crickets to generating 40+ leads
+                        monthly.
+                    </p>
+                    <div class="smm-testimonial-author">
+                        <div class="smm-author-avatar">MR</div>
+                        <div class="smm-author-info">
+                            <h5>Michael Rivera</h5>
+                            <p>CEO, CloudSync Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="smm-testimonial-card">
+                    <p class="smm-testimonial-quote">
+                        They took over our socials and freed up 20+ hours a week. The content quality is better than
+                        anything we produced in-house.
+                    </p>
+                    <div class="smm-testimonial-author">
+                        <div class="smm-author-avatar">AL</div>
+                        <div class="smm-author-info">
+                            <h5>Amanda Liu</h5>
+                            <p>Marketing Director, FitFuel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Section 6: Pricing Packages
+         ===================================================== -->
+    <section class="smm-pricing">
+        <div class="container">
+            <div class="smm-section-header smm-reveal">
+                <span class="smm-section-tag">Investment</span>
+                <h2 class="smm-section-title">Plans That Fit Your Growth Stage</h2>
+                <p class="smm-section-subtitle">
+                    Transparent pricing. No hidden fees. Cancel anytime.
+                </p>
+            </div>
+
+            <div class="smm-pricing-grid">
+                <!-- Starter Plan -->
+                <div class="smm-pricing-card">
+                    <div class="smm-plan-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Starter</h3>
+                    <p class="smm-plan-tagline">Perfect for new brands testing the waters</p>
+                    <div class="smm-plan-price">
+                        <span class="smm-price-amount">$299</span>
+                        <span class="smm-price-period">/ month</span>
+                    </div>
+                    <ul class="smm-plan-features">
+                        <li><i class="fas fa-check"></i> 2 Social Platforms</li>
+                        <li><i class="fas fa-check"></i> 8 Posts per Month</li>
+                        <li><i class="fas fa-check"></i> Basic Community Engagement</li>
+                        <li><i class="fas fa-check"></i> Monthly Analytics Report</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                    </ul>
+                    <a href="contact.html" class="smm-btn-outline" style="width: 100%; justify-content: center;">Get
+                        Started</a>
+                </div>
+
+                <!-- Growth Plan (Featured) -->
+                <div class="smm-pricing-card featured">
+                    <div class="smm-plan-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth</h3>
+                    <p class="smm-plan-tagline">For brands ready to scale aggressively</p>
+                    <div class="smm-plan-price">
+                        <span class="smm-price-amount">$599</span>
+                        <span class="smm-price-period">/ month</span>
+                    </div>
+                    <ul class="smm-plan-features">
+                        <li><i class="fas fa-check"></i> 4 Social Platforms</li>
+                        <li><i class="fas fa-check"></i> 15 Posts per Month</li>
+                        <li><i class="fas fa-check"></i> Full Community Management</li>
+                        <li><i class="fas fa-check"></i> Ad Campaign Support</li>
+                        <li><i class="fas fa-check"></i> Weekly Strategy Calls</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                    </ul>
+                    <a href="contact.html" class="smm-btn-primary" style="width: 100%; justify-content: center;">Select
+                        Plan</a>
+                </div>
+
+                <!-- Scale Plan -->
+                <div class="smm-pricing-card">
+                    <div class="smm-plan-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Scale</h3>
+                    <p class="smm-plan-tagline">Full-service for established brands</p>
+                    <div class="smm-plan-price">
+                        <span class="smm-price-amount">$999</span>
+                        <span class="smm-price-period">/ month</span>
+                    </div>
+                    <ul class="smm-plan-features">
+                        <li><i class="fas fa-check"></i> All Major Platforms</li>
+                        <li><i class="fas fa-check"></i> Daily Posting Strategy</li>
+                        <li><i class="fas fa-check"></i> Full Content Creation Suite</li>
+                        <li><i class="fas fa-check"></i> 24/7 Community Engagement</li>
+                        <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i> Custom Monthly Reports</li>
+                    </ul>
+                    <a href="contact.html" class="smm-btn-outline" style="width: 100%; justify-content: center;">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Section 7: Final Conversion CTA
+         ===================================================== -->
+    <section class="smm-final-cta">
+        <div class="container">
+            <div class="smm-cta-content smm-reveal">
+                <h2>Ready to Own Your Social Narrative?</h2>
+                <p>
+                    Stop blending into the feed. Let's build a social presence that commands attention, builds trust,
+                    and drives real revenue.
+                </p>
+                <div class="smm-hero-ctas">
+                    <a href="contact.html" class="smm-btn-primary smm-cta-pulse">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Your Free Strategy Session
+                    </a>
+                </div>
+                <div class="smm-cta-reassurance">
+                    <div class="smm-reassurance-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No long-term contracts</span>
+                    </div>
+                    <div class="smm-reassurance-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Cancel anytime</span>
+                    </div>
+                    <div class="smm-reassurance-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Results in 30 days or refund</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Popup: Free Audit
+         ===================================================== -->
+    <div class="smm-popup-overlay">
+        <div class="smm-popup">
+            <button class="smm-popup-close" aria-label="Close popup">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Get Your Free Social Audit</h3>
+            <p>Discover exactly what's holding back your social growth. No strings attached.</p>
+            <form class="smm-popup-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Work Email" required>
+                <input type="url" placeholder="Instagram or LinkedIn URL">
+                <button type="submit" class="smm-btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    Get My Free Audit
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer (Unchanged) -->
     <footer style="margin-top: 5rem;">
         <div class="container">
             <div class="footer-content">
@@ -251,7 +637,7 @@
                 <div>
                     <h4>Company</h4>
                     <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -264,8 +650,9 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="plasma-wave.js"></script>
+    <script src="social-bg.js"></script>
 </body>
 
 </html>

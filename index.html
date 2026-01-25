@@ -1,587 +1,1057 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="SUDOtech Studio - Premium digital solutions for global brands. Design, Development, Data & Marketing that transforms your vision into reality.">
-  <meta name="keywords" content="Graphic Design, Video Editing, Web Development, Data Analytics, Digital Marketing">
-  <meta name="author" content="SUDOtech Studio">
-  <title>SUDOtech Studio | Your Vision. Our Execution. Global Scale.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SUDOtech Studio - Premium Graphic Design, Video Editing, and Data Management Services. We transform your digital presence.">
+    <meta name="keywords" content="Graphic Design, Video Editing, Data Management, Creative Agency, Digital Services">
+    <meta name="author" content="SUDOtech Studio">
+    <title>SUDOtech Studio | Design, Video & Data Solutions</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Premium Styles -->
-  <link rel="stylesheet" href="homepage-premium.css">
-  <link rel="stylesheet" href="style.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="hero-text.css">
+    <link rel="stylesheet" href="problem-solution.css">
+    <link rel="stylesheet" href="process.css">
+    <link rel="stylesheet" href="scroll-3d.css">
+    <link rel="stylesheet" href="cta-transform.css">
+    <style>
+        /* Hero-specific styles */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -20;
+            overflow: hidden;
+            background-color: var(--page-bg);
+            transition: background-color 0.5s ease;
+        }
 
-  <style>
-    /* Page-specific overrides for premium homepage */
-    body {
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      overflow-x: hidden;
-    }
-
-    /* Header Scrolled State */
-    header {
-      background: rgba(5, 5, 5, 0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      transition: all 0.3s ease;
-    }
-
-    header.scrolled {
-      background: rgba(5, 5, 5, 0.95);
-    }
-
-    header.hidden {
-      transform: translateY(-100%);
-    }
-
-    [data-theme="light"] header {
-      background: rgba(250, 250, 250, 0.8);
-    }
-
-    [data-theme="light"] header.scrolled {
-      background: rgba(250, 250, 250, 0.95);
-    }
-
-    /* Hide welcome screen for premium page */
-    #welcome-screen {
-      display: none !important;
-    }
-
-    /* Premium section backgrounds */
-    .section-dark {
-      background: var(--bg-secondary);
-    }
-
-    .section-gradient {
-      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    }
-
-    /* Light mode adjustments */
-    [data-theme="light"] .premium-headline {
-      background: linear-gradient(135deg, #0a0a0a 0%, #333 50%, var(--accent-primary) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    [data-theme="light"] .section-dark {
-      background: #f0f0f0;
-    }
-  </style>
+        main {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 
-<body class="premium-page">
-  <!-- Noise Texture Overlay -->
-  <div class="noise-overlay"></div>
-
-  <!-- Navigation -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">
-          <span class="logo-prompt">&gt;</span>
-          <span class="logo-sudo">SUDO</span>
-          <span class="logo-tech">tech</span>
-          <span class="logo-cursor"></span>
-        </a>
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#portfolio">Work</a>
-          <a href="about.html">About</a>
-          <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get
-            Started</a>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-          </button>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <p id="welcome-text-1" class="terminal-text"></p>
+            <p id="welcome-text-2" class="terminal-text"></p>
         </div>
-        <button class="theme-toggle mobile-theme-only" aria-label="Toggle dark mode">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-        </button>
-        <div class="mobile-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ==========================================
-       HERO SECTION
-       ========================================== -->
-  <section id="home" class="premium-hero">
-    <!-- Particle Background -->
-    <canvas id="particle-canvas" class="hero-canvas-bg"></canvas>
-
-    <!-- Hero Content -->
-    <div class="hero-content-premium">
-      <h1 class="premium-headline">
-        Your Vision.<br>
-        Our <span class="accent">Execution</span>.<br>
-        Global Scale.
-      </h1>
-      <p class="premium-subtext">
-        We partner with ambitious brands to build digital experiences that captivate, convert, and scale worldwide.
-      </p>
-      <div class="hero-cta-group">
-        <a href="contact.html" class="btn-premium btn-premium-primary">
-          Start Your Project
-          <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
-        </a>
-        <a href="#portfolio" class="btn-premium btn-premium-ghost">
-          View Our Work
-        </a>
-      </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-indicator-icon"></div>
-      <span>Scroll to explore</span>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span class="logo-prompt">&gt;</span>
+                    <span class="logo-sudo">SUDO</span>
+                    <span class="logo-tech">tech</span>
+                    <span class="logo-cursor"></span>
+                </a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Work</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1.5rem; border-radius: 8px;">Get
+                        Started</a>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fixed Three.js Background -->
+    <div id="canvas-container"></div>
+
+    <!-- Floating Service Icons Background Layer -->
+    <div class="floating-service-icons-bg">
+        <!-- Design Icons -->
+        <div class="floating-icon floating-icon-1"><i class="fas fa-pen-nib"></i></div>
+        <div class="floating-icon floating-icon-2"><i class="fas fa-palette"></i></div>
+        <div class="floating-icon floating-icon-3"><i class="fas fa-bezier-curve"></i></div>
+        <!-- Video Icons -->
+        <div class="floating-icon floating-icon-4"><i class="fas fa-film"></i></div>
+        <div class="floating-icon floating-icon-5"><i class="fas fa-play-circle"></i></div>
+        <div class="floating-icon floating-icon-6"><i class="fas fa-video"></i></div>
+        <!-- Data Icons -->
+        <div class="floating-icon floating-icon-7"><i class="fas fa-database"></i></div>
+        <div class="floating-icon floating-icon-8"><i class="fas fa-chart-line"></i></div>
+        <div class="floating-icon floating-icon-9"><i class="fas fa-chart-pie"></i></div>
+        <!-- Web Icons -->
+        <div class="floating-icon floating-icon-10"><i class="fas fa-code"></i></div>
+        <div class="floating-icon floating-icon-11"><i class="fas fa-laptop-code"></i></div>
+        <div class="floating-icon floating-icon-12"><i class="fas fa-globe"></i></div>
+        <!-- Social Icons -->
+        <div class="floating-icon floating-icon-13"><i class="fas fa-hashtag"></i></div>
+        <div class="floating-icon floating-icon-14"><i class="fas fa-share-alt"></i></div>
+        <div class="floating-icon floating-icon-15"><i class="fas fa-users"></i></div>
+        <!-- Marketing Icons -->
+        <div class="floating-icon floating-icon-16"><i class="fas fa-bullhorn"></i></div>
+        <div class="floating-icon floating-icon-17"><i class="fas fa-camera"></i></div>
+        <div class="floating-icon floating-icon-18"><i class="fas fa-rocket"></i></div>
     </div>
-  </section>
 
-  <!-- ==========================================
-       PAIN → POWER SECTION
-       ========================================== -->
-  <section class="pain-power-section section-gradient">
-    <div class="container-premium">
-      <div class="section-header reveal">
-        <span class="section-tag">The Problem We Solve</span>
-        <h2 class="section-title">From Scattered to <span class="text-gradient">Seamless</span></h2>
-        <p class="section-subtitle">Your brand deserves more than fragmented solutions. We unify your digital presence.
-        </p>
-      </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
 
-      <div class="transform-grid">
-        <!-- Pain Card -->
-        <div class="transform-card pain reveal reveal-delay-1">
-          <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;">
-            <i class="fas fa-puzzle-piece"></i>
-          </div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: #ef4444;">Before</h3>
-          <p style="color: var(--text-muted); line-height: 1.6;">
-            Disconnected vendors. Inconsistent branding. Slow delivery. Missed opportunities.
-          </p>
+        <!-- Floating Badges - Scattered across hero section -->
+        <div class="hero-badge badge-top-left" data-service="design">
+            <i class="fas fa-layer-group"></i>
+            <span>Design</span>
         </div>
-
-        <!-- Arrow -->
-        <div class="transform-arrow reveal reveal-delay-2">
-          <i class="fas fa-arrow-right"></i>
-        </div>
-
-        <!-- Power Card -->
-        <div class="transform-card power reveal reveal-delay-3">
-          <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: #22c55e;">After</h3>
-          <p style="color: var(--text-muted); line-height: 1.6;">
-            One partner. Unified brand. Rapid execution. Measurable growth.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       CAPABILITIES / SERVICES SECTION
-       ========================================== -->
-  <section id="services" class="capabilities-section mouse-glow-container">
-    <div class="container-premium">
-      <div class="section-header reveal">
-        <span class="section-tag">What We Do</span>
-        <h2 class="section-title">End-to-End <span class="text-gradient">Capabilities</span></h2>
-        <p class="section-subtitle">Everything you need to build, scale, and dominate your market.</p>
-      </div>
-
-      <div class="bento-grid">
-        <!-- Featured: Web Development -->
-        <div class="bento-card featured reveal reveal-scale" data-tilt>
-          <div class="bento-icon">
+        <div class="hero-badge badge-top-right" data-service="website">
             <i class="fas fa-laptop-code"></i>
-          </div>
-          <h3 class="bento-title">Website Development</h3>
-          <p class="bento-description">
-            From stunning landing pages to complex web applications. We build responsive, high-performance websites that
-            convert visitors into customers and scale with your business.
-          </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
-            <span
-              style="padding: 0.25rem 0.75rem; background: var(--accent-subtle); color: var(--accent-primary); border-radius: 999px; font-size: 0.8rem;">React</span>
-            <span
-              style="padding: 0.25rem 0.75rem; background: var(--accent-subtle); color: var(--accent-primary); border-radius: 999px; font-size: 0.8rem;">Next.js</span>
-            <span
-              style="padding: 0.25rem 0.75rem; background: var(--accent-subtle); color: var(--accent-primary); border-radius: 999px; font-size: 0.8rem;">E-commerce</span>
-            <span
-              style="padding: 0.25rem 0.75rem; background: var(--accent-subtle); color: var(--accent-primary); border-radius: 999px; font-size: 0.8rem;">CMS</span>
-          </div>
-          <a href="web-development.html" class="bento-link">
-            Explore Web Solutions <i class="fas fa-arrow-right"></i>
-          </a>
+            <span>Website</span>
         </div>
-
-        <!-- Graphic Design -->
-        <div class="bento-card reveal reveal-scale reveal-delay-1" data-tilt>
-          <div class="bento-icon">
-            <i class="fas fa-pen-nib"></i>
-          </div>
-          <h3 class="bento-title">Graphic Design</h3>
-          <p class="bento-description">
-            Brand identity, UI/UX, and marketing visuals that capture attention and communicate your message.
-          </p>
-          <a href="graphic-design.html" class="bento-link">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
+        <div class="hero-badge badge-bottom-left" data-service="data">
+            <i class="fas fa-chart-pie"></i>
+            <span>Data</span>
         </div>
-
-        <!-- Video Editing -->
-        <div class="bento-card reveal reveal-scale reveal-delay-2" data-tilt>
-          <div class="bento-icon">
-            <i class="fas fa-film"></i>
-          </div>
-          <h3 class="bento-title">Video Production</h3>
-          <p class="bento-description">
-            Cinematic editing, motion graphics, and storytelling that brings your brand to life.
-          </p>
-          <a href="video-editing.html" class="bento-link">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
+        <div class="hero-badge badge-bottom-right" data-service="video">
+            <i class="fas fa-video"></i>
+            <span>Video</span>
         </div>
-
-        <!-- Data Management - Wide -->
-        <div class="bento-card wide reveal reveal-scale reveal-delay-3" data-tilt>
-          <div class="bento-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3 class="bento-title">Data Management & Analytics</h3>
-          <p class="bento-description">
-            Transform raw data into actionable insights. We build dashboards, clean databases, and create reports that
-            drive informed decisions.
-          </p>
-          <a href="data-management.html" class="bento-link">
-            Explore Data Solutions <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- Social Media -->
-        <div class="bento-card reveal reveal-scale reveal-delay-4" data-tilt>
-          <div class="bento-icon">
+        <div class="hero-badge badge-bottom-center" data-service="social">
             <i class="fas fa-hashtag"></i>
-          </div>
-          <h3 class="bento-title">Social Media</h3>
-          <p class="bento-description">
-            Strategic content, community growth, and engagement that builds your digital tribe.
-          </p>
-          <a href="social-management.html" class="bento-link">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
+            <span>Social</span>
         </div>
-
-        <!-- Product Marketing -->
-        <div class="bento-card reveal reveal-scale reveal-delay-4" data-tilt>
-          <div class="bento-icon">
+        <div class="hero-badge badge-mid-right" data-service="marketing">
             <i class="fas fa-bullhorn"></i>
-          </div>
-          <h3 class="bento-title">Product Marketing</h3>
-          <p class="bento-description">
-            Launch campaigns that drive awareness, engagement, and conversions for your products.
-          </p>
-          <a href="product-photography.html" class="bento-link">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       TRUST INDICATORS / STATS SECTION
-       ========================================== -->
-  <section class="trust-section section-dark">
-    <div class="container-premium">
-      <div class="section-header reveal">
-        <span class="section-tag">Why Choose Us</span>
-        <h2 class="section-title">Trusted by <span class="text-gradient">Growing Brands</span></h2>
-        <p class="section-subtitle">Numbers that speak for our commitment to excellence.</p>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card reveal reveal-delay-1">
-          <div class="stat-number" data-target="250" data-suffix="+">0</div>
-          <div class="stat-label">Projects Delivered</div>
-        </div>
-        <div class="stat-card reveal reveal-delay-2">
-          <div class="stat-number" data-target="85" data-suffix="+">0</div>
-          <div class="stat-label">Happy Clients</div>
-        </div>
-        <div class="stat-card reveal reveal-delay-3">
-          <div class="stat-number" data-target="5" data-suffix=" Years">0</div>
-          <div class="stat-label">In Business</div>
-        </div>
-        <div class="stat-card reveal reveal-delay-4">
-          <div class="stat-number" data-target="98" data-suffix="%">0</div>
-          <div class="stat-label">Client Retention</div>
-        </div>
-      </div>
-
-      <!-- Trust Badges -->
-      <div class="reveal" style="text-align: center; margin-top: 3rem;">
-        <div
-          style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; opacity: 0.6; align-items: center;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: var(--accent-primary);"></i>
-            <span>Secure & Confidential</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-clock" style="font-size: 1.5rem; color: var(--accent-primary);"></i>
-            <span>On-Time Delivery</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-headset" style="font-size: 1.5rem; color: var(--accent-primary);"></i>
-            <span>24/7 Support</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-globe" style="font-size: 1.5rem; color: var(--accent-primary);"></i>
-            <span>Global Reach</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       PROCESS SECTION
-       ========================================== -->
-  <section class="process-section">
-    <div class="container-premium">
-      <div class="section-header reveal">
-        <span class="section-tag">How We Work</span>
-        <h2 class="section-title">Our <span class="text-gradient">Process</span></h2>
-        <p class="section-subtitle">A proven framework that delivers results, every time.</p>
-      </div>
-
-      <div class="process-timeline">
-        <div class="process-step reveal reveal-delay-1">
-          <div class="process-number">01</div>
-          <h4 class="process-title">Discover</h4>
-          <p class="process-desc">We dive deep into your brand, goals, and challenges to understand what success looks
-            like.</p>
+            <span>Marketing</span>
         </div>
 
-        <div class="process-step reveal reveal-delay-2">
-          <div class="process-number">02</div>
-          <h4 class="process-title">Design</h4>
-          <p class="process-desc">We craft strategic solutions and stunning visuals that align with your vision.</p>
-        </div>
-
-        <div class="process-step reveal reveal-delay-3">
-          <div class="process-number">03</div>
-          <h4 class="process-title">Develop</h4>
-          <p class="process-desc">We build with precision, using modern technologies and best practices.</p>
-        </div>
-
-        <div class="process-step reveal reveal-delay-4">
-          <div class="process-number">04</div>
-          <h4 class="process-title">Deploy</h4>
-          <p class="process-desc">We launch, optimize, and provide ongoing support for continuous growth.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       PORTFOLIO PREVIEW
-       ========================================== -->
-  <section id="portfolio" class="section-padding section-dark">
-    <div class="container-premium">
-      <div class="section-header reveal">
-        <span class="section-tag">Our Work</span>
-        <h2 class="section-title">Selected <span class="text-gradient">Projects</span></h2>
-        <p class="section-subtitle">A glimpse of what we've built for brands like yours.</p>
-      </div>
-
-      <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: auto;">
-        <!-- Project 1 -->
-        <div class="bento-card reveal reveal-scale" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="assets/neon_brand_identity.png" alt="Neon Brand Identity"
-              style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.5s ease;">
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; align-items: flex-end; padding: 1.5rem;">
-              <div>
-                <span
-                  style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Brand
-                  Identity</span>
-                <h4 style="color: white; font-size: 1.2rem; margin-top: 0.25rem;">Neon Brand Overhaul</h4>
-              </div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title">
+                        <span class="line"><span class="highlight-text">BUILT</span> <span class="sub-text">by
+                                SUDOs.</span></span>
+                        <span class="line"><span class="highlight-text">SCALED</span> <span class="sub-text">by
+                                You.</span></span>
+                        <span class="line"><span class="highlight-text">DOMINATED</span> <span class="sub-text">by
+                                Us.</span></span>
+                    </h1>
+                    <p>We blend artistic mastery with data-driven insights. From stunning graphic design and cinematic
+                        video
+                        editing to robust data management solutions.</p>
+                    <div class="hero-btns">
+                        <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Project 2 -->
-        <div class="bento-card reveal reveal-scale reveal-delay-1" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="assets/cyberpunk_trailer.png" alt="Cyberpunk Trailer"
-              style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.5s ease;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-              <div
-                style="width: 60px; height: 60px; background: rgba(249, 115, 22, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <i class="fas fa-play" style="color: white; font-size: 1.5rem; margin-left: 4px;"></i>
-              </div>
+    <!-- 3D Scroll Container for Process & Problem/Solution -->
+    <div class="scroll-3d-container" id="scroll-container-home">
+        <div class="scroll-3d-viewport">
+            <div class="scroll-3d-world" id="scroll-world-home">
+
+                <!-- Layer 1: Process Section (Starts visible) -->
+                <div class="scroll-3d-layer" id="scroll-layer-process">
+                    <section class="process-section" id="our-process">
+                        <div class="container">
+                            <div class="process-header">
+                                <span class="process-badge">How We Work</span>
+                                <h2 class="process-title">Our <span class="highlight">Process</span></h2>
+                                <p class="process-subtitle">A proven framework that delivers results, every time.</p>
+                            </div>
+
+                            <div class="process-steps">
+                                <!-- Step 1 -->
+                                <div class="process-step">
+                                    <div class="step-number">01</div>
+                                    <h3 class="step-title">Discover</h3>
+                                    <p class="step-description">We dive deep into your brand, goals, and challenges to
+                                        understand what success looks like.</p>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="process-step">
+                                    <div class="step-number">02</div>
+                                    <h3 class="step-title">Design</h3>
+                                    <p class="step-description">We craft strategic solutions and stunning visuals that
+                                        align with your vision.</p>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="process-step">
+                                    <div class="step-number">03</div>
+                                    <h3 class="step-title">Develop</h3>
+                                    <p class="step-description">We build with precision, using modern technologies and
+                                        best practices.</p>
+                                </div>
+
+                                <!-- Step 4 -->
+                                <div class="process-step">
+                                    <div class="step-number">04</div>
+                                    <h3 class="step-title">Deploy</h3>
+                                    <p class="step-description">We launch, optimize, and provide ongoing support for
+                                        continuous growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Layer 2: Problem/Solution Section (Starts behind) -->
+                <div class="scroll-3d-layer" id="scroll-layer-problem">
+                    <section class="problem-solution-section" id="problem-solution">
+                        <div class="container">
+                            <div class="text-center">
+                                <span class="problem-badge">The Problem We Solve</span>
+                                <h2 class="problem-title">From Scattered to <span
+                                        class="highlight-orange">Seamless</span></h2>
+                                <p class="problem-subtitle">Your brand deserves more than fragmented solutions. We unify
+                                    your digital presence.</p>
+                            </div>
+
+                            <div class="comparison-container">
+                                <!-- Before Card -->
+                                <div class="comparison-card card-before">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                    </div>
+                                    <h3>Before</h3>
+                                    <p class="compare-text">Disconnected vendors. Inconsistent branding.<br>Slow
+                                        delivery. Missed opportunities.</p>
+                                </div>
+
+                                <!-- Arrow -->
+                                <div class="arrow-divider">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+
+                                <!-- After Card -->
+                                <div class="comparison-card card-after">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h3>After</h3>
+                                    <p class="compare-text">One partner. Unified brand. Rapid execution.<br>Measurable
+                                        growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
             </div>
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; align-items: flex-end; padding: 1.5rem;">
-              <div>
-                <span
-                  style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Video
-                  Production</span>
-                <h4 style="color: white; font-size: 1.2rem; margin-top: 0.25rem;">Cyberpunk Trailer</h4>
-              </div>
+        </div>
+    </div>
+
+    <!-- Service Modals -->
+    <div class="service-modal-overlay" id="service-modal-overlay">
+        <!-- Design Modal -->
+        <div class="service-modal" id="modal-design">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-layer-group"></i></div>
+                <h2>Graphic Design</h2>
             </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="bento-card reveal reveal-scale reveal-delay-2" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden;">
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Analytics Dashboard"
-              style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.5s ease;">
-            <div
-              style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; align-items: flex-end; padding: 1.5rem;">
-              <div>
-                <span
-                  style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Data
-                  Analytics</span>
-                <h4 style="color: white; font-size: 1.2rem; margin-top: 0.25rem;">FinTech Dashboard</h4>
-              </div>
+            <div class="modal-body">
+                <p class="modal-description">Transform your brand with stunning visual designs that capture attention
+                    and
+                    communicate your message effectively.</p>
+                <div class="modal-services">
+                    <h4>Services Included</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Brand Identity & Logo Design</li>
+                        <li><i class="fas fa-check"></i> Marketing Collaterals</li>
+                        <li><i class="fas fa-check"></i> Social Media Graphics</li>
+                        <li><i class="fas fa-check"></i> UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> Print Design</li>
+                    </ul>
+                </div>
+                <div class="modal-pricing">
+                    <h4>Pricing</h4>
+                    <div class="price-cards">
+                        <div class="price-card">
+                            <h5>Starter</h5>
+                            <div class="price">$299</div>
+                            <p>Logo + Brand Guide</p>
+                        </div>
+                        <div class="price-card featured">
+                            <h5>Professional</h5>
+                            <div class="price">$799</div>
+                            <p>Full Brand Package</p>
+                        </div>
+                        <div class="price-card">
+                            <h5>Enterprise</h5>
+                            <div class="price">Custom</div>
+                            <p>Complete Rebrand</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="modal-footer">
+                <a href="graphic-design.html" class="btn btn-primary modal-cta" data-service-name="Graphic Design">View
+                    Full
+                    Services & Pricing</a>
+                <a href="contact.html?service=Graphic Design" class="btn btn-outline">Get Started</a>
+            </div>
         </div>
-      </div>
 
-      <div class="reveal" style="text-align: center; margin-top: 3rem;">
-        <a href="#" class="btn-premium btn-premium-ghost">
-          View All Projects <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
-        </a>
-      </div>
+        <!-- Website Modal -->
+        <div class="service-modal" id="modal-website">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-laptop-code"></i></div>
+                <h2>Website Development</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">From wireframes to deployment, we build responsive, high-performance
+                    websites that
+                    drive results.</p>
+                <div class="modal-services">
+                    <h4>Services Included</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Custom Website Design</li>
+                        <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                        <li><i class="fas fa-check"></i> CMS Integration</li>
+                        <li><i class="fas fa-check"></i> SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> Hosting & Maintenance</li>
+                    </ul>
+                </div>
+                <div class="modal-pricing">
+                    <h4>Pricing</h4>
+                    <div class="price-cards">
+                        <div class="price-card">
+                            <h5>Landing Page</h5>
+                            <div class="price">$499</div>
+                            <p>Single Page Site</p>
+                        </div>
+                        <div class="price-card featured">
+                            <h5>Business</h5>
+                            <div class="price">$1,499</div>
+                            <p>5-10 Page Website</p>
+                        </div>
+                        <div class="price-card">
+                            <h5>E-commerce</h5>
+                            <div class="price">$2,999</div>
+                            <p>Full Online Store</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="web-development.html" class="btn btn-primary modal-cta"
+                    data-service-name="Web Development">View Full
+                    Services & Pricing</a>
+                <a href="contact.html?service=Full-Website Building" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Data Modal -->
+        <div class="service-modal" id="modal-data">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-chart-pie"></i></div>
+                <h2>Data Management</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Secure data entry, analysis, and cleaning services to help you make
+                    informed
+                    decisions.</p>
+                <div class="modal-services">
+                    <h4>Services Included</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Data Entry & Cleanup</li>
+                        <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                        <li><i class="fas fa-check"></i> Dashboard Creation</li>
+                        <li><i class="fas fa-check"></i> Database Management</li>
+                        <li><i class="fas fa-check"></i> Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="modal-pricing">
+                    <h4>Pricing</h4>
+                    <div class="price-cards">
+                        <div class="price-card">
+                            <h5>Basic</h5>
+                            <div class="price">$199</div>
+                            <p>Data Cleanup</p>
+                        </div>
+                        <div class="price-card featured">
+                            <h5>Standard</h5>
+                            <div class="price">$599</div>
+                            <p>Analysis + Reports</p>
+                        </div>
+                        <div class="price-card">
+                            <h5>Advanced</h5>
+                            <div class="price">$1,299</div>
+                            <p>Full Data Solution</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="data-management.html" class="btn btn-primary modal-cta"
+                    data-service-name="Data Management">View Full
+                    Services & Pricing</a>
+                <a href="contact.html?service=Data Management" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Video Modal -->
+        <div class="service-modal" id="modal-video">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-video"></i></div>
+                <h2>Video Editing</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Professional post-production and motion graphics to bring your stories to
+                    life with
+                    cinematic quality.</p>
+                <div class="modal-services">
+                    <h4>Services Included</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Video Editing & Cutting</li>
+                        <li><i class="fas fa-check"></i> Color Grading</li>
+                        <li><i class="fas fa-check"></i> Motion Graphics</li>
+                        <li><i class="fas fa-check"></i> Sound Design</li>
+                        <li><i class="fas fa-check"></i> YouTube Optimization</li>
+                    </ul>
+                </div>
+                <div class="modal-pricing">
+                    <h4>Pricing</h4>
+                    <div class="price-cards">
+                        <div class="price-card">
+                            <h5>Short Form</h5>
+                            <div class="price">$99</div>
+                            <p>Under 60 seconds</p>
+                        </div>
+                        <div class="price-card featured">
+                            <h5>Standard</h5>
+                            <div class="price">$349</div>
+                            <p>5-10 min video</p>
+                        </div>
+                        <div class="price-card">
+                            <h5>Premium</h5>
+                            <div class="price">$899</div>
+                            <p>Full Production</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="video-editing.html" class="btn btn-primary modal-cta" data-service-name="Video Editing">View
+                    Full
+                    Services & Pricing</a>
+                <a href="contact.html?service=Video Editing" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Social Modal -->
+        <div class="service-modal" id="modal-social">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-hashtag"></i></div>
+                <h2>Social Media Management</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Strategic content, community growth, and engagement analytics to build your
+                    digital
+                    tribe.</p>
+                <div class="modal-services">
+                    <h4>Services Included</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Content Strategy</li>
+                        <li><i class="fas fa-check"></i> Post Scheduling</li>
+                        <li><i class="fas fa-check"></i> Community Management</li>
+                        <li><i class="fas fa-check"></i> Analytics & Insights</li>
+                        <li><i class="fas fa-check"></i> Influencer Outreach</li>
+                    </ul>
+                </div>
+                <div class="modal-pricing">
+                    <h4>Pricing</h4>
+                    <div class="price-cards">
+                        <div class="price-card">
+                            <h5>Starter</h5>
+                            <div class="price">$299/mo</div>
+                            <p>2 Platforms</p>
+                        </div>
+                        <div class="price-card featured">
+                            <h5>Growth</h5>
+                            <div class="price">$599/mo</div>
+                            <p>4 Platforms</p>
+                        </div>
+                        <div class="price-card">
+                            <h5>Scale</h5>
+                            <div class="price">$999/mo</div>
+                            <p>Full Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="social-management.html" class="btn btn-primary modal-cta"
+                    data-service-name="Social Media Management">View Full Services & Pricing</a>
+                <a href="contact.html?service=Social Media Management" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Marketing Modal -->
+        <div class="service-modal" id="modal-marketing">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-bullhorn"></i></div>
+                <h2>Product Marketing</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Strategic product marketing campaigns that drive awareness, engagement, and
+                    conversions for your brand.</p>
+                <div class="modal-services">
+                    <h4>Services Included</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Product Launch Strategy</li>
+                        <li><i class="fas fa-check"></i> Market Research & Analysis</li>
+                        <li><i class="fas fa-check"></i> Campaign Management</li>
+                        <li><i class="fas fa-check"></i> Email Marketing</li>
+                        <li><i class="fas fa-check"></i> Performance Analytics</li>
+                    </ul>
+                </div>
+                <div class="modal-pricing">
+                    <h4>Pricing</h4>
+                    <div class="price-cards">
+                        <div class="price-card">
+                            <h5>Launch</h5>
+                            <div class="price">$499</div>
+                            <p>Single Campaign</p>
+                        </div>
+                        <div class="price-card featured">
+                            <h5>Growth</h5>
+                            <div class="price">$999/mo</div>
+                            <p>Ongoing Marketing</p>
+                        </div>
+                        <div class="price-card">
+                            <h5>Enterprise</h5>
+                            <div class="price">Custom</div>
+                            <p>Full Marketing Suite</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="product-photography.html" class="btn btn-primary modal-cta"
+                    data-service-name="Digital Marketing">View
+                    Full Services & Pricing</a>
+                <a href="contact.html?service=Product Photography" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- ==========================================
-       FINAL CTA SECTION
-       ========================================== -->
-  <section class="final-cta-section">
-    <div class="cta-glow"></div>
-    <div class="cta-content reveal">
-      <h2 class="cta-headline">Ready to <span class="text-gradient">Transform</span> Your Brand?</h2>
-      <p class="cta-subtext">Let's build something extraordinary together. No fluff. Just results.</p>
-      <a href="contact.html" class="btn-premium btn-premium-primary">
-        Start Your Project <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       FOOTER
-       ========================================== -->
-  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
-    <div class="container">
-      <div class="footer-content">
-        <div>
-          <a href="#" class="logo">
-            <span class="logo-prompt">&gt;</span>
-            <span class="logo-sudo">SUDO</span>
-            <span class="logo-tech">tech</span>
-            <span class="logo-cursor"></span>
-          </a>
-          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Transforming ideas into digital
-            reality through exceptional design and data strategies.</p>
-          <ul class="social-links-new" style="margin-top: 1rem;">
-            <li class="icon-content">
-              <a href="#" aria-label="X" data-social="x" class="social-link-new">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-            </li>
-            <li class="icon-content">
-              <a href="#" aria-label="Instagram" data-social="instagram" class="social-link-new">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li class="icon-content">
-              <a href="#" aria-label="LinkedIn" data-social="linkedin" class="social-link-new">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <li class="icon-content">
-              <a href="#" aria-label="Dribbble" data-social="dribbble" class="social-link-new">
-                <i class="fab fa-dribbble"></i>
-              </a>
-            </li>
-          </ul>
+    <!-- Stats Section -->
+    <section class="stats-section section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="250">0</div>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="85">0</div>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="15">0</div>
+                    <p>Experts Team</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="5">0</div>
+                    <p>Years Experience</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <h4 style="color: var(--text-primary);">Services</h4>
-          <ul style="margin-top: 1rem; color: var(--text-muted); line-height: 2;">
-            <li><a href="graphic-design.html" style="color: var(--text-muted);">Graphic Design</a></li>
-            <li><a href="video-editing.html" style="color: var(--text-muted);">Video Editing</a></li>
-            <li><a href="data-management.html" style="color: var(--text-muted);">Data Management</a></li>
-            <li><a href="web-development.html" style="color: var(--text-muted);">Web Development</a></li>
-            <li><a href="product-photography.html" style="color: var(--text-muted);">Product Marketing</a></li>
-            <li><a href="social-management.html" style="color: var(--text-muted);">Social Media</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="color: var(--text-primary);">Company</h4>
-          <ul style="margin-top: 1rem; color: var(--text-muted); line-height: 2;">
-            <li><a href="about.html" style="color: var(--text-muted);">About Us</a></li>
-            <li><a href="#" style="color: var(--text-muted);">Careers</a></li>
-            <li><a href="#" style="color: var(--text-muted);">Blog</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted);">Contact</a></li>
-            <li><a href="#" style="color: var(--text-muted);">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright" style="border-top: 1px solid var(--glass-border); padding-top: 2rem; margin-top: 2rem;">
-        <p style="color: var(--text-muted);">&copy; 2026 SUDOtech Studio. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <script src="homepage-animations.js"></script>
+    <!-- Services Section - Similar to Hero -->
+    <section id="services" class="expertise-section">
+        <!-- Note: Plasma Wave background is now global (fixed-website-bg) -->
 
-  <!-- Counter suffix fix -->
-  <script>
-    // Fix counter animation to include suffix
-    document.addEventListener('DOMContentLoaded', () => {
-      const counters = document.querySelectorAll('.stat-number[data-target]');
-      counters.forEach(counter => {
-        const suffix = counter.dataset.suffix || '';
-        // Initial state with suffix
-        counter.textContent = '0' + suffix;
-      });
-    });
-  </script>
+        <div class="container">
+            <div class="expertise-content">
+                <div class="text-center fade-in">
+                    <h2 style="margin-bottom: 0.5rem;">Our Expertise</h2>
+                    <p style="max-width: 600px; margin: 0 auto;">Comprehensive digital solutions tailored to your unique
+                        business
+                        needs.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3>Graphic Design</h3>
+                        <p>Brand identity, UI/UX design, and marketing collaterals that capture attention and
+                            communicate your
+                            message
+                            effectively.</p>
+                        <a href="graphic-design.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                                class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Video Editing</h3>
+                        <p>Professional post-production, color grading, and motion graphics to bring your stories to
+                            life with
+                            cinematic quality.</p>
+                        <a href="video-editing.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                                class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Management</h3>
+                        <p>Secure data entry, analysis, and cleaning services to help you make informed decisions based
+                            on accurate
+                            information.</p>
+                        <a href="data-management.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                                class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Expertise Section -->
+    <section class="section-padding"
+        style="padding-top: 20px; background-color: #faf7f2; opacity: 0.95; padding-bottom: 0px;">
+        <div class="container" style="margin-bottom: 1rem;">
+            <div class="text-center fade-in">
+                <small
+                    style="color: var(--secondary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">All
+                    of
+                    the Services We Offer</small>
+                <h2 style="margin-top: 0.5rem;">End-to-End Solutions</h2>
+            </div>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <!-- Set 1 -->
+                <!-- Item 1: Social -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>Social Management</h3>
+                    <p>Strategic content, community growth, and engagement analytics to build your digital tribe.</p>
+                    <a href="social-management.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 2: Web -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Full-Website Building</h3>
+                    <p>From wireframes to deployment, we build responsive, high-performance websites.</p>
+                    <a href="web-development.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 3: Photo -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Product Photography</h3>
+                    <p>Studio-grade photography that highlights details and elevates your product appeal.</p>
+                    <a href="product-photography.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 4: Graphic -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Brand identity and marketing materials that stand out.</p>
+                    <a href="graphic-design.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 5: Video -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-film"></i></div>
+                    <h3>Video Editing</h3>
+                    <p>Cinematic editing and motion graphics for storytelling.</p>
+                    <a href="video-editing.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 6: Data -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Management</h3>
+                    <p>Organize and analyze your data for better insights.</p>
+                    <a href="data-management.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+
+                <!-- Set 2 (Duplicate for Seamless Scroll) -->
+                <!-- Item 1: Social -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>Social Management</h3>
+                    <p>Strategic content, community growth, and engagement analytics to build your digital tribe.</p>
+                    <a href="social-management.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 2: Web -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Full-Website Building</h3>
+                    <p>From wireframes to deployment, we build responsive, high-performance websites.</p>
+                    <a href="web-development.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 3: Photo -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Product Photography & Marketing</h3>
+                    <p>Studio-grade photography that highlights details and elevates your product appeal.</p>
+                    <a href="product-photography.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 4: Graphic -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Brand identity and marketing materials that stand out.</p>
+                    <a href="graphic-design.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 5: Video -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-film"></i></div>
+                    <h3>Video Editing</h3>
+                    <p>Cinematic editing and motion graphics for storytelling.</p>
+                    <a href="video-editing.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <!-- Item 6: Data -->
+                <div class="marquee-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Management</h3>
+                    <p>Organize and analyze your data for better insights.</p>
+                    <a href="social-management.html" style="color: var(--primary); font-weight: 600;">Learn More <i
+                            class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding portfolio-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center fade-in portfolio-header">
+                <span class="section-tag">Our Portfolio</span>
+                <h2>Selected Works</h2>
+                <p class="section-subtitle">Discover our most impactful projects that showcase creativity, innovation,
+                    and
+                    results.</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="portfolio-filters fade-in">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> All
+                </button>
+                <button class="filter-btn" data-filter="design">
+                    <i class="fas fa-palette"></i> Design
+                </button>
+                <button class="filter-btn" data-filter="video">
+                    <i class="fas fa-video"></i> Video
+                </button>
+                <button class="filter-btn" data-filter="data">
+                    <i class="fas fa-chart-line"></i> Data
+                </button>
+                <button class="filter-btn" data-filter="marketing">
+                    <i class="fas fa-bullhorn"></i> Marketing
+                </button>
+            </div>
+
+            <!-- Bento Grid Portfolio -->
+            <div class="portfolio-bento-grid">
+                <!-- Featured Large Card -->
+                <div class="portfolio-card portfolio-card-featured fade-in" data-category="design">
+                    <div class="portfolio-card-image">
+                        <img src="assets/neon_brand_identity.png" alt="Neon Brand Identity" loading="lazy">
+                        <div class="portfolio-card-shine"></div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-category">
+                            <i class="fas fa-palette"></i> Brand Identity
+                        </span>
+                        <h3>Neon Brand Identity</h3>
+                        <p>Complete brand overhaul with vibrant neon aesthetics, custom typography, and cohesive visual
+                            language.
+                        </p>
+                        <div class="portfolio-card-footer">
+                            <div class="portfolio-stats">
+                                <span><i class="fas fa-eye"></i> 12.5K Views</span>
+                                <span><i class="fas fa-heart"></i> 847 Likes</span>
+                            </div>
+                            <a href="#" class="portfolio-view-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standard Card -->
+                <div class="portfolio-card fade-in" data-category="video">
+                    <div class="portfolio-card-image">
+                        <img src="assets/cyberpunk_trailer.png" alt="Cyberpunk Trailer" loading="lazy">
+                        <div class="portfolio-card-shine"></div>
+                        <div class="play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-category">
+                            <i class="fas fa-video"></i> Video Production
+                        </span>
+                        <h3>Cyberpunk Trailer</h3>
+                        <p>Cinematic trailer with stunning VFX and color grading.</p>
+                        <a href="#" class="portfolio-view-btn">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standard Card -->
+                <div class="portfolio-card fade-in" data-category="data">
+                    <div class="portfolio-card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="FinTech Analytics Dashboard" loading="lazy">
+                        <div class="portfolio-card-shine"></div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-category">
+                            <i class="fas fa-chart-line"></i> Data Analytics
+                        </span>
+                        <h3>FinTech Analytics</h3>
+                        <p>Real-time dashboard with predictive insights.</p>
+                        <a href="#" class="portfolio-view-btn">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Wide Card -->
+                <div class="portfolio-card portfolio-card-wide fade-in" data-category="marketing">
+                    <div class="portfolio-card-image">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Social Growth Campaign" loading="lazy">
+                        <div class="portfolio-card-shine"></div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-category">
+                            <i class="fas fa-bullhorn"></i> Digital Marketing
+                        </span>
+                        <h3>Social Growth Strategy</h3>
+                        <p>Comprehensive social media campaign that increased engagement by 340% and generated 2M+
+                            impressions.</p>
+                        <div class="portfolio-metrics">
+                            <div class="metric">
+                                <span class="metric-value">340%</span>
+                                <span class="metric-label">Engagement</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">2M+</span>
+                                <span class="metric-label">Impressions</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">85K</span>
+                                <span class="metric-label">New Followers</span>
+                            </div>
+                        </div>
+                        <a href="#" class="portfolio-view-btn">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standard Card -->
+                <div class="portfolio-card fade-in" data-category="video">
+                    <div class="portfolio-card-image">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Tech Summit Video" loading="lazy">
+                        <div class="portfolio-card-shine"></div>
+                        <div class="play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-category">
+                            <i class="fas fa-film"></i> Event Coverage
+                        </span>
+                        <h3>Tech Summit Recap</h3>
+                        <p>Full event documentation and highlight reel.</p>
+                        <a href="#" class="portfolio-view-btn">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standard Card -->
+                <div class="portfolio-card fade-in" data-category="data">
+                    <div class="portfolio-card-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Market Trends Dashboard" loading="lazy">
+                        <div class="portfolio-card-shine"></div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-category">
+                            <i class="fas fa-chart-pie"></i> Data Visualization
+                        </span>
+                        <h3>Market Trends 2024</h3>
+                        <p>Interactive data visualization platform.</p>
+                        <a href="#" class="portfolio-view-btn">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center fade-in portfolio-cta">
+                <a href="#" class="btn btn-primary btn-glow">
+                    <span>Explore All Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <p class="cta-note">Over 250+ successful projects delivered</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transform CTA Section -->
+    <section class="cta-transform-section">
+        <div class="container">
+            <h2 class="cta-transform-title fade-in">Ready to <span class="highlight-transform">Transform</span> Your
+                Brand?</h2>
+            <p class="cta-transform-subtitle fade-in">Let's build something extraordinary together. No fluff. Just
+                results.</p>
+            <a href="contact.html" class="btn-cta-animated fade-in">
+                <span class="btn-text">Start Your Project</span>
+                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+
+    <!-- Contact Section -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="logo">
+                        <span class="logo-prompt">&gt;</span>
+                        <span class="logo-sudo">SUDO</span>
+                        <span class="logo-tech">tech</span>
+                        <span class="logo-cursor"></span>
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Transforming ideas into digital reality through
+                        exceptional
+                        design and data strategies.</p>
+                    <ul class="social-links-new">
+                        <li class="icon-content">
+                            <a href="#" aria-label="X" data-social="x" class="social-link-new">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <div class="tooltip">X</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Instagram" data-social="instagram" class="social-link-new">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <div class="tooltip">Instagram</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="LinkedIn" data-social="linkedin" class="social-link-new">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="tooltip">LinkedIn</div>
+                        </li>
+                        <li class="icon-content">
+                            <a href="#" aria-label="Dribbble" data-social="dribbble" class="social-link-new">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <div class="tooltip">Dribbble</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="graphic-design.html">Graphic Design</a></li>
+                        <li><a href="video-editing.html">Video Editing</a></li>
+                        <li><a href="data-management.html">Data Management</a></li>
+                        <li><a href="web-development.html">Full-Website Building</a></li>
+                        <li><a href="product-photography.html">Product Photography & Marketing</a></li>
+                        <li><a href="social-management.html">Social Media Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul style="margin-top: 1rem; color: var(--text-gray); line-height: 2;">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 SUDOtech Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="hero-background.js"></script>
+
+    <!-- 3D Robot Agent -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- 3D Robot Agent Removed -->
 </body>
 
 </html>

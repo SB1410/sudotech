@@ -1,0 +1,894 @@
+/*
+ * Service Pages - Unified Stylesheet
+ * Shared styles for all service pages (Graphic Design, Video Editing, etc.)
+ * Preserves existing backgrounds - only styles content overlays
+ */
+
+/* =====================================================
+   CSS Variables
+   ===================================================== */
+:root {
+    --sp-primary: #f97316;
+    --sp-secondary: #fb923c;
+    --sp-accent: #8b5cf6;
+    --sp-gradient: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
+    --sp-glass: rgba(255, 255, 255, 0.08);
+    --sp-glass-border: rgba(255, 255, 255, 0.15);
+    --sp-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --sp-glow: 0 0 40px rgba(249, 115, 22, 0.3);
+}
+
+/* Light mode adjustments */
+html:not([data-theme="dark"]) {
+    --sp-glass: rgba(255, 255, 255, 0.85);
+    --sp-glass-border: rgba(0, 0, 0, 0.1);
+}
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+.sp-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 8rem 0 4rem;
+}
+
+.sp-hero-content {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.sp-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--sp-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--sp-glass-border);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: spFadeUp 0.6s ease-out forwards;
+}
+
+.sp-hero-badge i {
+    color: var(--sp-primary);
+}
+
+.sp-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: spFadeUp 0.6s ease-out 0.1s forwards;
+}
+
+.sp-hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    opacity: 0;
+    animation: spFadeUp 0.6s ease-out 0.2s forwards;
+}
+
+.sp-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    background: var(--sp-gradient);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.5);
+    opacity: 0;
+    animation: spFadeUp 0.6s ease-out 0.3s forwards;
+}
+
+.sp-hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px -10px rgba(249, 115, 22, 0.6);
+    color: white;
+}
+
+/* =====================================================
+   Section Common Styles
+   ===================================================== */
+.sp-section {
+    padding: 5rem 0;
+    position: relative;
+    z-index: 5;
+}
+
+.sp-section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.sp-section-tag {
+    display: inline-block;
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--sp-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.sp-section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.sp-section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   Problems Section
+   ===================================================== */
+.sp-problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.sp-problem-card {
+    background: var(--sp-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--sp-glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sp-problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ef4444, #f97316);
+}
+
+.sp-problem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sp-shadow);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.sp-problem-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.sp-problem-icon i {
+    font-size: 1.25rem;
+    color: #ef4444;
+}
+
+.sp-problem-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.sp-problem-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.sp-problem-solution {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sp-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.sp-problem-solution i {
+    color: #10b981;
+}
+
+/* =====================================================
+   Services Grid
+   ===================================================== */
+.sp-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.sp-service-card {
+    background: var(--sp-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--sp-glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sp-service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(249, 115, 22, 0.08), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.sp-service-card:hover::after {
+    opacity: 1;
+}
+
+.sp-service-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--sp-glow);
+    border-color: var(--sp-primary);
+}
+
+.sp-service-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--sp-gradient);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 25px -8px rgba(249, 115, 22, 0.4);
+}
+
+.sp-service-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.sp-service-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.sp-service-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.sp-service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.sp-service-tag {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--sp-primary);
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* =====================================================
+   Process Timeline
+   ===================================================== */
+.sp-process-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.sp-process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: var(--sp-gradient);
+    transform: translateY(-50%);
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.sp-process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.sp-step-circle {
+    width: 70px;
+    height: 70px;
+    background: var(--sp-glass);
+    backdrop-filter: blur(10px);
+    border: 3px solid var(--sp-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.sp-step-circle i {
+    font-size: 1.5rem;
+    color: var(--sp-primary);
+    transition: all 0.3s ease;
+}
+
+.sp-process-step:hover .sp-step-circle {
+    background: var(--sp-gradient);
+    transform: scale(1.1);
+    box-shadow: var(--sp-glow);
+}
+
+.sp-process-step:hover .sp-step-circle i {
+    color: white;
+}
+
+.sp-step-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+}
+
+.sp-step-content p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    max-width: 130px;
+    margin: 0 auto;
+}
+
+/* Mobile Timeline */
+@media (max-width: 768px) {
+    .sp-process-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-left: 2.5rem;
+    }
+
+    .sp-process-timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 35px;
+        right: auto;
+        width: 3px;
+        height: 100%;
+        transform: none;
+    }
+
+    .sp-process-step {
+        flex-direction: row;
+        text-align: left;
+        gap: 1.25rem;
+    }
+
+    .sp-step-circle {
+        width: 55px;
+        height: 55px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .sp-step-content p {
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* =====================================================
+   Results Section
+   ===================================================== */
+.sp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.sp-stat-card {
+    background: var(--sp-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--sp-glass-border);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sp-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sp-shadow);
+}
+
+.sp-stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--sp-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.35rem;
+}
+
+.sp-stat-label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Testimonials */
+.sp-testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.sp-testimonial-card {
+    background: var(--sp-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--sp-glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+}
+
+.sp-testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sp-shadow);
+}
+
+.sp-testimonial-quote {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+}
+
+.sp-testimonial-quote::before {
+    content: '"';
+    font-size: 2.5rem;
+    color: var(--sp-primary);
+    line-height: 0;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.sp-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sp-author-avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--sp-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+}
+
+.sp-author-info h5 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.15rem;
+}
+
+.sp-author-info p {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* =====================================================
+   Pricing Section
+   ===================================================== */
+.sp-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.sp-pricing-card {
+    background: var(--sp-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--sp-glass-border);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-pricing-card.featured {
+    border-color: var(--sp-primary);
+    box-shadow: var(--sp-glow);
+    transform: scale(1.02);
+}
+
+.sp-pricing-card.featured::before {
+    content: 'POPULAR';
+    position: absolute;
+    top: 18px;
+    right: -32px;
+    background: var(--sp-gradient);
+    color: white;
+    padding: 0.4rem 2.5rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    transform: rotate(45deg);
+    letter-spacing: 0.05em;
+}
+
+.sp-pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sp-shadow);
+    border-color: var(--sp-primary);
+}
+
+.sp-pricing-card.featured:hover {
+    transform: scale(1.02) translateY(-8px);
+}
+
+.sp-plan-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--sp-gradient);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.sp-plan-icon i {
+    font-size: 1.35rem;
+    color: white;
+}
+
+.sp-pricing-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+}
+
+.sp-plan-tagline {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-bottom: 1.25rem;
+}
+
+.sp-plan-price {
+    margin-bottom: 1.5rem;
+}
+
+.sp-price-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-light);
+}
+
+.sp-price-period {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    font-weight: 400;
+}
+
+.sp-plan-features {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.sp-plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.sp-plan-features li i {
+    color: #10b981;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.sp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    background: var(--sp-gradient);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px -8px rgba(249, 115, 22, 0.4);
+}
+
+.sp-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -8px rgba(249, 115, 22, 0.5);
+    color: white;
+}
+
+.sp-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    background: transparent;
+    color: var(--sp-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    border: 2px solid var(--sp-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sp-btn-outline:hover {
+    background: var(--sp-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   Final CTA Section
+   ===================================================== */
+.sp-final-cta {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.sp-cta-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.sp-cta-content h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    background: var(--sp-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.25rem;
+}
+
+.sp-cta-content>p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+}
+
+.sp-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    background: var(--sp-gradient);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.5);
+    animation: spPulse 2s ease-in-out infinite;
+}
+
+.sp-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px -10px rgba(249, 115, 22, 0.6);
+    color: white;
+    animation: none;
+}
+
+@keyframes spPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 10px 50px -10px rgba(249, 115, 22, 0.8);
+    }
+}
+
+.sp-cta-reassurance {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+}
+
+.sp-reassurance-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+.sp-reassurance-item i {
+    color: #10b981;
+}
+
+/* =====================================================
+   Animations
+   ===================================================== */
+@keyframes spFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal Classes */
+.sp-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sp-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   Responsive Design
+   ===================================================== */
+@media (max-width: 1024px) {
+    .sp-pricing-card.featured {
+        transform: scale(1);
+    }
+
+    .sp-pricing-card.featured:hover {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sp-hero {
+        padding: 7rem 0 3rem;
+    }
+
+    .sp-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .sp-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .sp-section {
+        padding: 4rem 0;
+    }
+
+    .sp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sp-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .sp-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sp-cta-reassurance {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .sp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sp-stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* =====================================================
+   Reduced Motion
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

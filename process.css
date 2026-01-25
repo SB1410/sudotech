@@ -1,0 +1,170 @@
+/* Process Section Styles */
+.process-section {
+    padding: 3rem 0;
+    background-color: var(--bg-dark);
+    /* Using theme dark bg, or purely #000 if needed for contrast */
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    /* Extend background to full viewport width */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+/* Badge and Title */
+.process-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 2;
+}
+
+.process-badge {
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+}
+
+.process-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.process-title .highlight {
+    color: var(--primary);
+}
+
+.process-subtitle {
+    font-size: 1.1rem;
+    color: #888;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Steps Container */
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Connecting Line */
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    /* Aligns with center of circles (80px height / 2) */
+    left: 50px;
+    right: 50px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+/* Individual Step */
+.process-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+/* Step Number Circle */
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: var(--bg-dark);
+    /* Match bg to hide line behind */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Active/Featured Step (02 in design) */
+/* Active/Featured Step (02 in design) */
+/* REMOVED static active state as per user request */
+
+/* Text Styles */
+.step-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.step-description {
+    font-size: 0.95rem;
+    color: #888;
+    line-height: 1.6;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* Hover Effects */
+/* Hover Effects */
+.process-step:hover .step-number {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .process-steps {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .process-steps::before {
+        display: none;
+        /* Hide horizontal line on mobile */
+    }
+
+    /* Vertical line for mobile */
+    .process-steps::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 1;
+        transform: translateX(-50%);
+        display: block;
+    }
+
+    .step-number {
+        background: var(--bg-dark);
+        /* Keep bg to hide vertical line */
+        margin-bottom: 1.5rem;
+    }
+
+    .step-description {
+        max-width: 100%;
+    }
+}
